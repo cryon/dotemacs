@@ -1,4 +1,6 @@
-dotemacs
+Dotemacs
 ========
 
-My emacs configuration
+My emacs configuration.
+
+Clone into ~/.emacs.d/
