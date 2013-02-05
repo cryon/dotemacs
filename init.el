@@ -50,6 +50,7 @@
     (load-package 'move-text)
     (load-package 'expand-region)
     (load-package 'erc-hl-nicks)
+    (load-package 'haskell-mode)
     (load-package 'yaml-mode)
     (load-package 'twittering-mode)
     (load-package 'windresize)
@@ -72,15 +73,3 @@
     (eshell)
     (rename-buffer "eshell")
     (message "fun will now commence...")))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("944f3086f68cc5ea9dfbdc9e5846ad91667af9472b3d0e1e35a9633dcab984d5" "159bb8f86836ea30261ece64ac695dc490e871d57107016c09f286146f0dae64" default))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )

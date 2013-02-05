@@ -12,4 +12,5 @@
 	     "/usr/X11/bin:"
 	     "/opt/local/bin:"
 	     "/opt/local/sbin:"
-	     "/usr/local/share/npm/bin"))))
+	     "/usr/local/share/npm/bin:"
+	     "/Users/john/.cabal/bin"))))
