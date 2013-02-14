@@ -4,7 +4,7 @@
        (osx         (string-match "darwin" os))
        (windows     (string-match "windows" os)))
   (when osx
-    (set-frame-font "Inconsolata-13")
+    (set-frame-font "Inconsolata-15")
 
     (setq mac-option-key-is-meta nil
 	  mac-command-key-is-meta t

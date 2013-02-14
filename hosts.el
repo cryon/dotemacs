@@ -13,4 +13,5 @@
 	     "/opt/local/bin:"
 	     "/opt/local/sbin:"
 	     "/usr/local/share/npm/bin:"
-	     "/Users/john/.cabal/bin"))))
+	     "/Users/john/.cabal/bin"))
+    (setq haskell-program-name "/usr/local/bin/ghci")))

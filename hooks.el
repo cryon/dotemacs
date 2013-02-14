@@ -9,5 +9,10 @@
 	  (lambda ()
 	    (setq show-trailing-whitespace 1)
 	    (hl-line-mode)
-	    (rainbow-mode)
-	    ))
+	    (rainbow-mode)))
+
+;; haskell
+(add-hook 'haskell-mode-hook
+	  (lambda ()
+	    (turn-on-haskell-indentation)
+	    (turn-on-haskell-doc-mode)))
