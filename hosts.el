@@ -14,4 +14,8 @@
 	     "/opt/local/sbin:"
 	     "/usr/local/share/npm/bin:"
 	     "/Users/john/.cabal/bin"))
+
+    (setenv "GHC_MOD"
+	    "/Users/john/.cabal/share/ghc-mod-1.11.4/")
+
     (setq haskell-program-name "/usr/local/bin/ghci")))
