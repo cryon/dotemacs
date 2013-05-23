@@ -45,7 +45,7 @@
       (load-package 'rainbow-mode)
 
       (load-package 'powerline)
-      (powerline-default))
+      (powerline-default-theme))
 
     (load-package 'move-text)
     (load-package 'expand-region)
