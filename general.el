@@ -11,7 +11,7 @@
 (setq line-number-mode t)
 (setq column-number-mode t)
 
-;; cleaner inreface
+;; cleaner interface
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 
