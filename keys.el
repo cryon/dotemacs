@@ -39,6 +39,11 @@
  (kbd "C-x C-b")
  'ibuffer)
 
+;; align-regexp is cool
+(global-set-key
+ (kbd "C-x a")
+ 'align-regex)
+
 ;; C-a moves point to the first non whitespace character. If already on
 ;; first character, move point to the beginning of line
 (global-set-key
