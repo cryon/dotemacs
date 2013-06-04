@@ -49,6 +49,9 @@
 (show-paren-mode t)
 (setq show-paren-delay 0)
 
+;; no tabs
+(setq-default indent-tabs-mode nil)
+
 ;; erc
 (setq erc-timestamp-only-if-changed-flag nil
       erc-timestamp-format "%H:%M:%S "
