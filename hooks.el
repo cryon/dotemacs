@@ -8,8 +8,9 @@
 (add-hook 'emacs-lisp-mode-hook
 	  (lambda ()
 	    (setq show-trailing-whitespace 1)
-	    (hl-line-mode)
-	    (rainbow-mode)))
+	    (when window-system
+	      (hl-line-mode)
+	      (rainbow-mode))))
 
 ;; haskell
 (add-hook 'haskell-mode-hook
