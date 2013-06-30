@@ -39,6 +39,16 @@
  (kbd "C-x C-b")
  'ibuffer)
 
+;; align-regexp is cool
+(global-set-key
+ (kbd "C-x a")
+ 'align-regexp)
+
+;; replace-regexp deserves a better bind than C-M-%
+(global-set-key
+ (kbd "C-c r")
+ 'replace-regexp)
+
 ;; C-a moves point to the first non whitespace character. If already on
 ;; first character, move point to the beginning of line
 (global-set-key

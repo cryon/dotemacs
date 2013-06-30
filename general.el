@@ -11,9 +11,10 @@
 (setq line-number-mode t)
 (setq column-number-mode t)
 
-;; cleaner inreface
+;; cleaner interface
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
+(menu-bar-mode -1)
 
 ;; no startup messages
 (setq inhibit-default-init t)
@@ -48,6 +49,9 @@
 ;; make parenthesis stick out
 (show-paren-mode t)
 (setq show-paren-delay 0)
+
+;; no tabs
+(setq-default indent-tabs-mode nil)
 
 ;; erc
 (setq erc-timestamp-only-if-changed-flag nil

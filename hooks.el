@@ -17,7 +17,8 @@
 	    (turn-on-haskell-indentation)
 	    (turn-on-haskell-doc-mode)
 	    (hl-line-mode)
-	    (setq show-trailing-whitespace 1)))
+	    (setq show-trailing-whitespace 1)
+	    (setq haskell-process-type 'cabal-dev)))
 
 (let ((mod (getenv "GHC_MOD")))
   (when mod

@@ -29,9 +29,9 @@
 ;; add repositories
 (setq package-archives
       '(("gnu"       . "http://elpa.gnu.org/packages/")
-	("elpa"      . "http://tromey.com/elpa/")
-	("marmalade" . "http://marmalade-repo.org/packages/")
-	("melpa"     . "http://melpa.milkbox.net/packages/")))
+	("elpa"       . "http://tromey.com/elpa/")
+	("marmalade"  . "http://marmalade-repo.org/packages/")
+	("melpa"      . "http://melpa.milkbox.net/packages/")))
 
 ;; load packages
 ;;(package-refresh-contents)
