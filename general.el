@@ -61,3 +61,6 @@
       erc-nick "cryon"
       erc-user-fullname "john"
       erc-prompt ">")
+
+;; start emacs daemon
+(server-start)
