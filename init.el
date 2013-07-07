@@ -28,7 +28,7 @@
 
 ;; add repositories
 (setq package-archives
-      '(("gnu"       . "http://elpa.gnu.org/packages/")
+      '(("gnu"        . "http://elpa.gnu.org/packages/")
 	("elpa"       . "http://tromey.com/elpa/")
 	("marmalade"  . "http://marmalade-repo.org/packages/")
 	("melpa"      . "http://melpa.milkbox.net/packages/")))
@@ -55,18 +55,12 @@
     (load-package 'twittering-mode)
     (load-package 'windresize)
 
-    (load-package 'highlight-symbol)
-    (setq highlight-symbol-idle-delay 0.3)
-
     (load-package 'magit)
     ;; magit in whole frame
     (setq magit-status-buffer-switch-function 'switch-to-buffer)
 
     (load-package 'uniquify)
     (setq uniquify-buffer-name-style 'post-forward)
-
-    (load-package 'scala-mode)
-    (setq auto-mode-alist (cons '("\\.scala$" . scala-mode) auto-mode-alist))
 
     ;; finally
     (cd "~")
