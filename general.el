@@ -14,7 +14,6 @@
 ;; cleaner interface
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
-(menu-bar-mode -1)
 
 (when (not window-system)
   (menu-bar-mode -1))
@@ -64,3 +63,6 @@
       erc-nick "cryon"
       erc-user-fullname "john"
       erc-prompt ">")
+
+;; start emacs daemon
+(server-start)
