@@ -54,6 +54,7 @@
     (load-package 'yaml-mode)
     (load-package 'twittering-mode)
     (load-package 'windresize)
+    (load-package 'multiple-cursors)
 
     (load-package 'magit)
     ;; magit in whole frame
