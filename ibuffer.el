@@ -18,6 +18,7 @@
 	   (mode . js-mode)
 	   (mode . css-mode)
 	   (mode . xml-mode)
+           (mode . nxml-mode)
 	   (mode . html-mode)
 	   (mode . haskell-mode)
 	   (mode . perl-mode)
