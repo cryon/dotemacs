@@ -12,8 +12,9 @@
 (setq column-number-mode t)
 
 ;; cleaner interface
-(scroll-bar-mode -1)
-(tool-bar-mode -1)
+(when window-system
+  (scroll-bar-mode -1)
+  (tool-bar-mode -1))
 
 (when (not window-system)
   (menu-bar-mode -1))
