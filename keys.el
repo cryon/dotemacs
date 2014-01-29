@@ -60,7 +60,7 @@
      (and (= oldpos (point))
 	  (beginning-of-line)))))
 
-;; Adds a cursor at the next occurance of whats in the current regionx
+;; Adds a cursor at the next occurance of whats in the current region
 (global-set-key
  (kbd "C-ä")
  'mc/mark-next-like-this)

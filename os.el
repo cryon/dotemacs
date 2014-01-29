@@ -7,7 +7,7 @@
     (set-frame-font "Consolas-11"))
 
   (when osx
-    (set-frame-font "Inconsolata-15")
+    (set-frame-font "Fira Mono-13")
 
     (setq mac-option-key-is-meta nil
 	  mac-command-key-is-meta t
