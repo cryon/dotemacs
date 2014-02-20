@@ -65,5 +65,10 @@
       erc-user-fullname "john"
       erc-prompt ">")
 
+;; ido-mode
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode t)
+
 ;; start emacs daemon
 (server-start)

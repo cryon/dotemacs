@@ -55,13 +55,20 @@
     (load-package 'twittering-mode)
     (load-package 'windresize)
     (load-package 'multiple-cursors)
-
     (load-package 'magit)
+
     ;; magit in whole frame
     (setq magit-status-buffer-switch-function 'switch-to-buffer)
 
     (load-package 'uniquify)
     (setq uniquify-buffer-name-style 'post-forward)
+
+    ;; ido mode
+    (load-package 'ido-vertical-mode)
+    (load-package 'ido-ubiquitous)
+    (load-package 'smex)
+
+    (ido-vertical-mode 1)
 
     ;; finally
     (cd "~")

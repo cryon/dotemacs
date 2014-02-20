@@ -64,3 +64,8 @@
 (global-set-key
  (kbd "C-ä")
  'mc/mark-next-like-this)
+
+;; Use smex for M-x
+(global-set-key
+ (kbd "M-x")
+ 'smex)
