@@ -38,15 +38,6 @@
 (add-hook
  'after-init-hook
  '(lambda ()
-    (when window-system
-      (load-package 'subatomic-theme)
-      (load-theme 'subatomic t)
-
-      (load-package 'rainbow-mode)
-
-      (load-package 'powerline)
-      (powerline-default-theme))
-
     (load-package 'move-text)
     (load-package 'expand-region)
     (load-package 'erc-hl-nicks)
@@ -55,11 +46,12 @@
     (load-package 'twittering-mode)
     (load-package 'windresize)
     (load-package 'multiple-cursors)
+
+    ;; magit
+    (setq magit-status-buffer-switch-function 'switch-to-buffer)
     (load-package 'magit)
 
-    ;; magit in whole frame
-    (setq magit-status-buffer-switch-function 'switch-to-buffer)
-
+    ;; uniquify
     (load-package 'uniquify)
     (setq uniquify-buffer-name-style 'post-forward)
 
@@ -67,8 +59,18 @@
     (load-package 'ido-vertical-mode)
     (load-package 'ido-ubiquitous)
     (load-package 'smex)
-
+    (load-package 'ido-complete-space-or-hyphen)
     (ido-vertical-mode 1)
+
+    ;; visuals
+    (when window-system
+      (load-package 'rainbow-mode)
+
+      (load-package 'powerline)
+      (powerline-default-theme)
+
+      (load-package 'subatomic-theme)
+      (load-theme 'subatomic t))
 
     ;; finally
     (cd "~")
