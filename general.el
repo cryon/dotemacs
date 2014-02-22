@@ -70,5 +70,8 @@
 (setq ido-everywhere t)
 (ido-mode t)
 
+;; 80 columns seems nice...
+(setq-default fill-column 80)
+
 ;; start emacs daemon
 (server-start)

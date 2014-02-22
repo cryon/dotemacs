@@ -24,7 +24,8 @@
 	  "keys.el"
 	  "eshell.el"
 	  "ibuffer.el"
-	  "hooks.el"))
+	  "hooks.el"
+          "jabber.el"))
 
 ;; add repositories
 (setq package-archives
@@ -46,6 +47,7 @@
     (load-package 'twittering-mode)
     (load-package 'windresize)
     (load-package 'multiple-cursors)
+    (load-package 'jabber)
 
     ;; magit
     (setq magit-status-buffer-switch-function 'switch-to-buffer)

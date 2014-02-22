@@ -6,3 +6,6 @@ elpa
 newsticker
 tramp
 url
+jabber-avatar-cache
+jabber-history
+.mc-lists.el
