@@ -26,6 +26,12 @@
 	   (mode . java-mode)
 	   (mode . scala-mode)))
 
+         ("Jabber"
+          (or
+           (mode . jabber-browse-mode)
+           (mode . jabber-chat-mode)
+           (mode . jabber-roster-mode)))
+
 	 ("IRC - Channels"
 	  (mode . erc-mode)
 	  (name . "^\\#"))

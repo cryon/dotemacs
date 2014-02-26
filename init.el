@@ -49,6 +49,10 @@
     (load-package 'multiple-cursors)
     (load-package 'jabber)
 
+    ;; git-gutter
+    (load-package 'git-gutter)
+    (global-git-gutter-mode +1)
+
     ;; magit
     (setq magit-status-buffer-switch-function 'switch-to-buffer)
     (load-package 'magit)

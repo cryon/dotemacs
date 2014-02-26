@@ -73,5 +73,10 @@
 ;; 80 columns seems nice...
 (setq-default fill-column 80)
 
+(setq git-gutter:added-sign " ")
+(setq git-gutter:deleted-sign " ")
+(setq git-gutter:modified-sign " ")
+(setq git-gutter:hide-gutter t)
+
 ;; start emacs daemon
 (server-start)
