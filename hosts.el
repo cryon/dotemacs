@@ -16,7 +16,7 @@
       (setq exec-path (append exec-path dirs)))
 
     (setenv "GHC_MOD"
-	    "/Users/john/.cabal/share/ghc-mod-1.11.4/")
+	    "/Users/john/.cabal/share/x86_64-osx-ghc-7.6.3/ghc-mod-3.1.6")
 
     (setq haskell-program-name "ghci"))
 
