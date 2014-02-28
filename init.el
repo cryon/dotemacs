@@ -50,7 +50,7 @@
     (load-package 'jabber)
 
     ;; git-gutter
-    (load-package 'git-gutter)
+    (load-package 'git-gutter-fringe)
     (global-git-gutter-mode +1)
 
     ;; magit
