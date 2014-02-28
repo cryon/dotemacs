@@ -69,3 +69,12 @@
 (global-set-key
  (kbd "M-x")
  'smex)
+
+;; Velfolt says it's cool to jump between hunks. I agree.
+(global-set-key
+ (kbd "M-n")
+ 'git-gutter:next-hunk)
+
+(global-set-key
+ (kbd "M-p")
+ 'git-gutter:previous-hunk)
