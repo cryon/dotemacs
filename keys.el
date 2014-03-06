@@ -78,3 +78,9 @@
 (global-set-key
  (kbd "M-p")
  'git-gutter:previous-hunk)
+
+;; Navigate between windows... Quake style (wasd)
+(global-set-key (kbd "C-S-a") 'windmove-left)
+(global-set-key (kbd "C-S-d") 'windmove-right)
+(global-set-key (kbd "C-S-w") 'windmove-up)
+(global-set-key (kbd "C-S-s") 'windmove-down)
