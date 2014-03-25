@@ -21,6 +21,7 @@
            (mode . nxml-mode)
 	   (mode . html-mode)
 	   (mode . haskell-mode)
+           (mode . haskell-cabal-mode)
 	   (mode . perl-mode)
 	   (mode . sql-mode)
 	   (mode . java-mode)
