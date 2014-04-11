@@ -68,6 +68,11 @@
     (load-package 'ido-complete-space-or-hyphen)
     (ido-vertical-mode 1)
 
+    ;; yasnippet
+    (load-package 'yasnippet)
+    (load-package 'yasnippet-bundle)
+    ;;(yas-global-mode 1)
+
     ;; visuals
     (when window-system
       (load-package 'rainbow-mode)
