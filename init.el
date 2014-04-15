@@ -49,6 +49,10 @@
     (load-package 'multiple-cursors)
     (load-package 'jabber)
 
+    ;; web-mode
+    (load-package 'web-mode)
+    (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+
     ;; git-gutter
     (load-package 'git-gutter-fringe)
     (global-git-gutter-mode +1)
