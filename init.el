@@ -25,7 +25,8 @@
 	  "eshell.el"
 	  "ibuffer.el"
 	  "hooks.el"
-          "jabber.el"))
+          "jabber.el"
+          "haskell.el"))
 
 ;; add repositories
 (setq package-archives
