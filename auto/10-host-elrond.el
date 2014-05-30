@@ -17,4 +17,4 @@
 
       (setenv
        "GHC_MOD"
-       "/Users/john/.cabal/share/x86_64-osx-ghc-7.8.0.20140228/ghc-mod-4.0.2"))))
+       "~/.cabal/share/x86_64-osx-ghc-7.8.2/ghc-mod-4.1.0"))))
