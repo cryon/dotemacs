@@ -1,10 +1,9 @@
 
 ;; server settings
-(load "~/jabber.gpg")
 (setq
  jabber-account-list
- `((,jabber-username
-    (:password . ,jabber-password))))
+ `((,secret-jabber-username
+    (:password . ,secret-jabber-password))))
 
 ;; general
 (setq jabber-auto-reconnect t

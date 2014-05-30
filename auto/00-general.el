@@ -41,10 +41,6 @@
 ;; mondays starts the week in my locale
 (setq calendar-week-start-day 1)
 
-;; we want to be able to restore old window configurations
-(when (fboundp 'winner-mode)
-  (winner-mode 1))
-
 ;; send all backups and auto-saves to the systems temp-folder
 (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
@@ -56,27 +52,16 @@
 ;; no tabs
 (setq-default indent-tabs-mode nil)
 
-;; erc
-(setq erc-timestamp-only-if-changed-flag nil
-      erc-timestamp-format "%H:%M:%S "
-      erc-fill-prefix "         "
-      erc-insert-timestamp-function 'erc-insert-timestamp-left
-      erc-nick "cryon"
-      erc-user-fullname "john"
-      erc-prompt ">")
-
-;; ido-mode
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-(ido-mode t)
-
 ;; 80 columns seems nice...
 (setq-default fill-column 80)
 
-(setq git-gutter:added-sign " ")
-(setq git-gutter:deleted-sign " ")
-(setq git-gutter:modified-sign " ")
-(setq git-gutter:hide-gutter t)
-
 ;; start emacs daemon
 (server-start)
+
+;; default working directory will be the home directory
+(cd "~")
+
+;; start an eshell
+(eshell)
+(rename-buffer "eshell")
+

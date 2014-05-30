@@ -1,4 +1,3 @@
-
 (setq haskell-program-name "cabal repl")
 
 (add-hook 'haskell-mode-hook
