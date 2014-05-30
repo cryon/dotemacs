@@ -1,4 +1,3 @@
-
 ;; server settings
 (setq
  jabber-account-list

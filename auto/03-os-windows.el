@@ -1,3 +1,2 @@
-
-(when (string-match "windows" (symbol-name system-type))  
+(when (string-match "windows" (symbol-name system-type))
   (set-frame-font "Consolas-10"))
