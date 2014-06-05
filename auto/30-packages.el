@@ -7,10 +7,6 @@
 (load-package 'multiple-cursors)
 (load-package 'jabber)
 
-;; magit
-(load-package 'magit)
-(setq magit-status-buffer-switch-function 'switch-to-buffer)
-
 ;; uniquify
 (load-package 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward)
