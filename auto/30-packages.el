@@ -6,6 +6,7 @@
 (load-package 'windresize)
 (load-package 'multiple-cursors)
 (load-package 'jabber)
+(load-package 'projectile)
 
 ;; uniquify
 (load-package 'uniquify)
