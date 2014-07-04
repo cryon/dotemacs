@@ -85,5 +85,6 @@
 (global-set-key (kbd "C-S-w") 'windmove-up)
 (global-set-key (kbd "C-S-s") 'windmove-down)
 
-;; M-o to open project files
+;; projectile
 (global-set-key (kbd "M-o") 'projectile-find-file)
+(global-set-key (kbd "M-s") 'projectile-switch-project)
