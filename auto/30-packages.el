@@ -13,3 +13,7 @@
 ;; uniquify
 (load-package 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward)
+
+;; nyan cat!
+(load-package 'nyan-mode)
+(nyan-mode)
