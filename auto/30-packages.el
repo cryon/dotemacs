@@ -16,4 +16,5 @@
 
 ;; nyan cat!
 (load-package 'nyan-mode)
+(setq nyan-bar-length 16)
 (nyan-mode)
