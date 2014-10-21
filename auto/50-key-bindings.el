@@ -85,10 +85,6 @@
 (global-set-key (kbd "C-S-w") 'windmove-up)
 (global-set-key (kbd "C-S-s") 'windmove-down)
 
-;; projectile
-(global-set-key (kbd "M-o") 'projectile-find-file)
-(global-set-key (kbd "M-s") 'projectile-switch-project)
-
 ;; company-mode
 (define-key company-active-map (kbd "C-n") 'company-select-next)
 (define-key company-active-map (kbd "C-p") 'company-select-previous)
