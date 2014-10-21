@@ -6,4 +6,3 @@
 
 ;; start an eshell
 (eshell)
-(rename-buffer "eshell")
