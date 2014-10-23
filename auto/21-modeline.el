@@ -2,11 +2,11 @@
  mode-line-format
  '(
    ;; point position
-   (8 "%e "
-      (:eval (propertize "%l:" 'face 'font-lock-string-face))
-      (:eval (propertize "%c"  'face (if (>= (current-column) 80)
-                                         'font-lock-warning-face
-                                       'font-lock-string-face))))
+   (8
+    (:propertize " %l:" face font-lock-string-face)
+    (:eval (propertize "%c" 'face (if (>= (current-column) 80)
+                                      'font-lock-warning-face
+                                    'font-lock-string-face))))
 
    ;; major modes
    ;; not interested in minor modes
@@ -23,34 +23,33 @@
    ;; buffer name
    (:propertize "%b" face font-lock-doc-face)
 
-   ;; jabber activity - right aligned
+   ;; right aligned stuff
    (:eval
-    (propertize
-     " "
-     'display
-     `(space
-       :align-to (- right 22 ,(string-width jabber-activity-mode-string)))))
-   (:eval jabber-activity-mode-string)
-
-   ;; nyan cat saves the day
-   (:eval
-    (if nyan-mode
+    (let* ((status-offset 2)
+           (nyan-offset
+            (+ status-offset (if nyan-mode (+ 2 nyan-bar-length) 0)))
+           (jabber-offset
+            (+ nyan-offset (string-width jabber-activity-mode-string))))
       (concat
-       (propertize " " 'display '(space :align-to (- right 20)))
-       (propertize "|" 'face 'vertical-border)
-       (nyan-create)
-       (propertize "|" 'face 'vertical-border))))
+       ;; jabber activity
+       (propertize " " 'display `(space :align-to (- right ,jabber-offset)))
+       jabber-activity-mode-string
 
+       ;; nyan-cat
+       (when nyan-mode
+         (concat
+          (propertize " " 'display `(space :align-to (- right ,nyan-offset)))
+          (propertize "|" 'face 'vertical-border)
+          (nyan-create)
+          (propertize "|" 'face 'vertical-border)))
 
-
-   ;; read-only / changed
-   (:eval (propertize " " 'display '(space :align-to (- right 2))))
-   (:eval
-    (cond (buffer-read-only
-           (propertize "RO" 'face 'font-lock-warning-face))
-          ((buffer-modified-p)
-           (propertize "* " 'face 'font-lock-warning-face))
-          (t "  ")))))
+       ;; read-only / changed
+       (propertize " " 'display `(space :align-to (- right ,status-offset)))
+       (cond (buffer-read-only
+              (propertize "RO" 'face 'font-lock-warning-face))
+             ((buffer-modified-p)
+              (propertize "* " 'face 'font-lock-warning-face))
+             (t "  ")))))))
 
 (defun special-buffer-p (buffer-name)
   "Check if buffer-name is the name of a special buffer. I.e.
