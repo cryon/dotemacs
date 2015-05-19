@@ -1,2 +1,5 @@
-(when (string-match "windows" (symbol-name system-type))
-  (set-frame-font "Consolas-10"))
+(let ((system-string (symbol-name system-type)))
+  (when (or
+         (string-match "windows" system-string)
+         (string-match "cygwin" system-string))
+    (set-frame-font "Consolas-10")))
