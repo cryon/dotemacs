@@ -7,3 +7,4 @@
 (load-package 'smex)
 (load-package 'ido-complete-space-or-hyphen)
 (ido-vertical-mode 1)
+(setq ido-vertical-define-keys 'C-n-and-C-p-only)
