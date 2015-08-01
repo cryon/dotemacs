@@ -11,3 +11,7 @@ jabber-history
 .mc-lists.el
 secrets.gpg
 projectile-bookmarks.eld
+eshell
+ido.last
+recentf
+smex-items
