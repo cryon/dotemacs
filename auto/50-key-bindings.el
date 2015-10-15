@@ -89,3 +89,6 @@
 (define-key company-active-map (kbd "C-n") 'company-select-next)
 (define-key company-active-map (kbd "C-p") 'company-select-previous)
 (define-key company-active-map (kbd "C-d") 'company-show-doc-buffer)
+
+;; if there's anything outside of emacs, I don't want to know.
+(global-set-key [f12] 'toggle-frame-fullscreen)
