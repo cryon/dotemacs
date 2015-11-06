@@ -25,7 +25,8 @@
 (setq inhibit-startup-echo-area-message (user-login-name))
 
 ;; a little less annoyance
-(setq visible-bell t)
+(setq visible-bell nil)
+(setq ring-bell-function 'ignore)
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq make-backup-files nil)
 (delete-selection-mode 1)
