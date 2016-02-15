@@ -6,6 +6,9 @@
 (load-package 'multiple-cursors)
 (load-package 'jabber)
 
+(load-package 'unkillable-scratch)
+(unkillable-scratch)
+
 (load-package 'projectile)
 (projectile-global-mode)
 
