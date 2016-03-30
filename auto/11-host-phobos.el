@@ -8,10 +8,10 @@
 		  "/usr/X11/bin"
 		  "/opt/local/bin"
 		  "/opt/local/sbin"
-                  "/home/john/.cargo/bin/")))
+                  "/Users/john/.cargo/bin/")))
       (setenv "PATH" (mapconcat 'identity dirs path-separator))
 
       (setenv "LIBRARY_PATH" "/usr/local/lib")
-      (setenv "RUST_SRC_PATH" "/home/john/code/thirdparty/rust/src")
+      (setenv "RUST_SRC_PATH" "/Users/john/code/thirdparty/rust/src")
 
       (setq exec-path (append exec-path dirs)))))
