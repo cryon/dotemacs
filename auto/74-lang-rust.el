@@ -5,5 +5,5 @@
 
 (add-hook 'racer-mode-hook #'company-mode)
 
-(global-set-key (kbd "TAB") #'company-indent-or-complete-common) ;
+(global-set-key [C-tab] 'company-complete)
 (setq company-tooltip-align-annotations t)
