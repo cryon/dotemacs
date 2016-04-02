@@ -7,8 +7,10 @@
       (selection "#373b41")
       (comment "#969896")
       (red "#cc6666")
+      (full-red "#ff0000")
       (yellow "#f0c674")
-      (green "#b5bd68"))
+      (green "#b5bd68")
+      (full-green "#00ff00"))
 
   ;; fringe
   (set-face-attribute 'fringe nil :background bg)
@@ -20,8 +22,8 @@
   (set-face-attribute 'trailing-whitespace nil :background bg :foreground red :underline t)
 
   ;; paren
-  (set-face-attribute 'show-paren-match nil :background bg :foreground green :bold t)
-  (set-face-attribute 'show-paren-mismatch nil :background bg :foreground red :bold t)
+  (set-face-attribute 'show-paren-match nil :background bg :foreground full-green :bold t)
+  (set-face-attribute 'show-paren-mismatch nil :background bg :foreground full-red :bold t)
 
   ;; mode line
   (set-face-attribute 'mode-line nil :box `(:line-width 1 :color ,selection))
