@@ -14,9 +14,9 @@
 
   ;; fringe
   (set-face-attribute 'fringe nil :background bg)
-  (set-face-attribute 'git-gutter-fr:modified nil :background yellow :foreground yellow)
-  (set-face-attribute 'git-gutter-fr:added nil :background green :foreground green)
-  (set-face-attribute 'git-gutter-fr:deleted nil :background red :foreground red)
+  (set-face-attribute 'git-gutter-fr:modified nil :background bg :foreground yellow)
+  (set-face-attribute 'git-gutter-fr:added nil :background bg :foreground green)
+  (set-face-attribute 'git-gutter-fr:deleted nil :background bg :foreground red)
 
   ;; whitespace
   (set-face-attribute 'trailing-whitespace nil :background bg :foreground red :underline t)
