@@ -35,11 +35,6 @@
   ;; cursor
   (set-cursor-color fg))
 
-;; extras
-(when window-system
-  (load-package 'rainbow-mode))
-
-
 ;; leaving this since I cannot make up my mind
 ;; (if window-system
 ;;     (progn
