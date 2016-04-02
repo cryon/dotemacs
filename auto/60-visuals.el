@@ -30,7 +30,7 @@
   (set-face-attribute 'modeline-inactive nil :box `(:line-width 1 :color ,selection) :background bg)
 
   ;; linum mode
-  (set-face-attribute 'linum nil :background bg :foreground comment)
+  (set-face-attribute 'linum nil :background bg :foreground selection)
 
   ;; cursor
   (set-cursor-color fg))

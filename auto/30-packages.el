@@ -5,7 +5,8 @@
 (load-package 'windresize)
 (load-package 'multiple-cursors)
 (load-package 'jabber)
-
+(load-package 'linum)
+ 
 (load-package 'unkillable-scratch)
 (unkillable-scratch)
 
