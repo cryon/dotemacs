@@ -5,6 +5,7 @@
 (let ((bg "#1d1f21")
       (fg "#c5c8c6")
       (selection "#373b41")
+      (comment "#969896")
       (red "#cc6666")
       (yellow "#f0c674")
       (green "#b5bd68"))
@@ -25,6 +26,9 @@
   ;; mode line
   (set-face-attribute 'mode-line nil :box `(:line-width 1 :color ,selection))
   (set-face-attribute 'modeline-inactive nil :box `(:line-width 1 :color ,selection) :background bg)
+
+  ;; linum mode
+  (set-face-attribute 'linum nil :background bg :foreground comment)
 
   ;; cursor
   (set-cursor-color fg))
