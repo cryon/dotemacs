@@ -24,16 +24,6 @@
  (kbd "M-<down>")
  'move-text-down)
 
-;; expand region
-(global-set-key
- (kbd "S-M-<up>")
- 'er/expand-region)
-
-;; contract region
-(global-set-key
- (kbd "S-M-<down>")
- 'er/contract-region)
-
 ;; ibuffer is way cooler than buffer menu
 (global-set-key
  (kbd "C-x C-b")
