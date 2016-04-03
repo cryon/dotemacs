@@ -22,6 +22,7 @@
 	   (mode . html-mode)
 	   (mode . haskell-mode)
            (mode . haskell-cabal-mode)
+           (mode . rust-mode)
 	   (mode . perl-mode)
 	   (mode . sql-mode)
 	   (mode . java-mode)
