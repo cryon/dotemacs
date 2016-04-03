@@ -1,19 +1,3 @@
-;; scroll up
-(global-set-key
- (kbd "S-<up>")
- (lambda()
-   (interactive)
-   (scroll-down 1)
-   (previous-line 1)))
-
-;; scroll down
-(global-set-key
- (kbd "S-<down>")
- (lambda()
-   (interactive)
-   (scroll-up 1)
-   (next-line 1)))
-
 ;; move text up
 (global-set-key
  (kbd "M-<up>")
@@ -59,15 +43,6 @@
 (global-set-key
  (kbd "M-x")
  'smex)
-
-;; Velfolt says it's cool to jump between hunks. I agree.
-(global-set-key
- (kbd "M-n")
- 'git-gutter:next-hunk)
-
-(global-set-key
- (kbd "M-p")
- 'git-gutter:previous-hunk)
 
 ;; Navigate between windows... Quake style (wasd)
 (global-set-key (kbd "C-S-a") 'windmove-left)
