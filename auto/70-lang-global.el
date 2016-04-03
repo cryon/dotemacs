@@ -6,3 +6,4 @@
 (autopair-global-mode)
 
 (hl-line-mode)
+(setq show-trailing-whitespace 1)
