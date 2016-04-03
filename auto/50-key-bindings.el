@@ -55,5 +55,8 @@
 (define-key company-active-map (kbd "C-p") 'company-select-previous)
 (define-key company-active-map (kbd "C-d") 'company-show-doc-buffer)
 
+;; magit
+(global-set-key (kbd "C-x g") 'magit-status)
+
 ;; if there's anything outside of emacs, I don't want to know.
 (global-set-key [f12] 'toggle-frame-fullscreen)
