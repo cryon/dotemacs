@@ -49,30 +49,3 @@
         (:eval (unless (equal "" *jabber-current-show*)
                  (concat "\t You're " *jabber-current-show*
                          " (" *jabber-current-status* ")")))))
-
-;; notifications plx!
-(add-hook 'focus-out-hook (lambda () (setq os-frame-focus 'nil)))
-(add-hook 'focus-in-hook  (lambda () (setq os-frame-focus 't)))
-
-(defun notify (title message)
-  "Show a message with `terminal-notifier-command`."
-  (start-process "terminal-notifier"
-                 "*terminal-notifier*"
-                 "/Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier"
-                 "-title" title
-                 "-message" message
-                 "-activate" "org.gnu.Emacs"
-                 "-sender" "org.gnu.Emacs"
-                 "-sound"  "Tink"))
-
-(defun notify-jabber-message (from buf text proposed-alert)
-  (when (or (not (memq (selected-window) (get-buffer-window-list buf)))
-            (not os-frame-focus))
-    (if (jabber-muc-sender-p from)
-        (notify (format "(PM) %s"
-                        (jabber-jid-displayname (jabber-jid-user from)))
-                (format "%s: %s" (jabber-jid-resource from) text)))
-    (notify (format "%s" (jabber-jid-displayname from))
-            text)))
-
-(add-hook 'jabber-alert-message-hooks 'notify-jabber-message)
