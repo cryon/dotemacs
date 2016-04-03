@@ -4,3 +4,5 @@
 
 (load-package 'autopair)
 (autopair-global-mode)
+
+(hl-line-mode)
