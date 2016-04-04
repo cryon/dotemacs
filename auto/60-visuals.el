@@ -34,13 +34,3 @@
 
   ;; cursor
   (set-cursor-color fg))
-
-;; leaving this since I cannot make up my mind
-;; (if window-system
-;;     (progn
-;;       (load-package 'subatomic-theme)
-;;       (setq subatomic-high-contrast
-;;       (load-theme 'subatomic t))
-;;   (progn
-;;     (load-package 'subatomic256-theme)
-;;     (load-theme 'subatomic256 t))))
