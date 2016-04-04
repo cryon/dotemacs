@@ -16,8 +16,7 @@
   (scroll-bar-mode -1)
   (tool-bar-mode -1))
 
-(when (not window-system)
-  (menu-bar-mode -1))
+(menu-bar-mode -1)
 
 ;; no startup messages
 (setq inhibit-default-init t)
