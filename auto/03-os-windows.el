@@ -2,4 +2,4 @@
   (when (or
          (string-match "windows" system-string)
          (string-match "cygwin" system-string))
-    (set-frame-font "Consolas-10")))
+    (set-frame-font "Source Code Pro-11")))
