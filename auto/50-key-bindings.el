@@ -60,3 +60,7 @@
 
 ;; if there's anything outside of emacs, I don't want to know.
 (global-set-key [f12] 'toggle-frame-fullscreen)
+
+;; highlight symbol
+(global-set-key (kbd "C-å") 'highlight-symbol)
+(global-set-key (kbd "C-Å")  'highlight-symbol-query-replace)

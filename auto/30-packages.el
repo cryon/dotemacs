@@ -4,6 +4,7 @@
 (load-package 'windresize)
 (load-package 'multiple-cursors)
 (load-package 'jabber)
+(load-package 'highlight-symbol)
 
 (load-package 'linum)
 (global-linum-mode 1)
