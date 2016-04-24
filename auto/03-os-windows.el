@@ -2,4 +2,4 @@
   (when (or
          (string-match "windows" system-string)
          (string-match "cygwin" system-string))
-    (set-frame-font "Source Code Pro-11")))
+    (set-frame-font "Source Code Pro-11" nil t)))
