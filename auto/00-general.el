@@ -54,3 +54,6 @@
 
 ;; 80 columns seems nice...
 (setq-default fill-column 80)
+
+;; automatically insert newline
+(setq next-line-add-newlines t)
