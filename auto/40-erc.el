@@ -7,6 +7,7 @@
  ;; Timestamps
  erc-timestamp-only-if-changed-flag nil
  erc-timestamp-format "[%H:%M:%S] "
+ erc-fill-prefix      "           "
  erc-insert-timestamp-function 'erc-insert-timestamp-left
 
  ;; User information
