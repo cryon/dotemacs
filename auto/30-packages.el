@@ -6,9 +6,6 @@
 (load-package 'jabber)
 (load-package 'highlight-symbol)
 
-(load-package 'linum)
-(global-linum-mode 1)
-
 (load-package 'unkillable-scratch)
 (unkillable-scratch)
 

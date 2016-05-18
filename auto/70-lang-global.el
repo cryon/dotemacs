@@ -7,3 +7,4 @@
 
 (hl-line-mode)
 (setq show-trailing-whitespace 1)
+(add-hook 'prog-mode-hook 'linum-mode)
