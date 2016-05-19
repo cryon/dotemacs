@@ -1,3 +1,5 @@
+(load-package 'jabber)
+
 ;; server settings
 (setq
  jabber-account-list

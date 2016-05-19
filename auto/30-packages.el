@@ -3,7 +3,6 @@
 (load-package 'twittering-mode)
 (load-package 'windresize)
 (load-package 'multiple-cursors)
-(load-package 'jabber)
 (load-package 'highlight-symbol)
 
 (load-package 'unkillable-scratch)
