@@ -14,9 +14,9 @@
    (:propertize "%m: " face font-lock-variable-name-face
                 help-echo buffer-file-coding-system)
 
-   ;; shortened directory (if not special buffer)
+   ;; shortened directory (if buffer have a corresponding file)
    (:eval
-    (unless (special-buffer-p (buffer-name))
+    (when (buffer-file-name)
       (propertize (shorten-directory default-directory 35)
                   'face 'font-lock-comment-face)))
 
@@ -50,11 +50,6 @@
              ((buffer-modified-p)
               (propertize "* " 'face 'font-lock-warning-face))
              (t "  ")))))))
-
-(defun special-buffer-p (buffer-name)
-  "Check if buffer-name is the name of a special buffer. I.e.
-  starts and ends with *"
-  (string-match-p "^\\*.+\\*$" buffer-name))
 
 ;; helper function
 ;; stolen from: http://amitp.blogspot.se/2011/08/emacs-custom-mode-line.html
