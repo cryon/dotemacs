@@ -64,3 +64,6 @@
 ;; highlight symbol
 (global-set-key (kbd "C-å") 'highlight-symbol)
 (global-set-key (kbd "C-Å")  'highlight-symbol-query-replace)
+
+;; idomenu
+(global-set-key (kbd "M-i") 'idomenu)

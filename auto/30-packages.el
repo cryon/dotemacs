@@ -19,3 +19,5 @@
 (load-package 'nyan-mode)
 (setq nyan-bar-length 16)
 (nyan-mode)
+
+(load-package 'idomenu)
