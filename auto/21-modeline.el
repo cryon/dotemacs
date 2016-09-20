@@ -51,6 +51,13 @@
               (propertize "* " 'face 'font-lock-warning-face))
              (t "  ")))))))
 
+(defun special-buffer-p (buffer-name)
+  "Check if buffer-name is the name of a special buffer."
+  (or (string-match-p "^\\*.+\\*$" buffer-name)
+      ;; workaround for magit's 'trailing asterisk' problem
+      ;; https://github.com/magit/magit/issues/2334
+      (string-match-p "^\\*magit.*:.+$" buffer-name)))
+
 ;; helper function
 ;; stolen from: http://amitp.blogspot.se/2011/08/emacs-custom-mode-line.html
 (defun shorten-directory (dir max-length)
