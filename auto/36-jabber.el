@@ -4,7 +4,8 @@
 (setq
  jabber-account-list
  `((,secret-jabber-username
-    (:password . ,secret-jabber-password))))
+    (:password . ,secret-jabber-password)
+    (:connection-type . ssl))))
 
 ;; general
 (setq jabber-auto-reconnect t
