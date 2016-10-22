@@ -63,7 +63,11 @@
 
 ;; highlight symbol
 (global-set-key (kbd "C-å") 'highlight-symbol)
-(global-set-key (kbd "C-Å")  'highlight-symbol-query-replace)
+(global-set-key (kbd "C-Å") 'highlight-symbol-query-replace)
+
+;; got to stop using the arrow keys
+(global-set-key (kbd "M-n") 'forward-paragraph)
+(global-set-key (kbd "M-p") 'backward-paragraph)
 
 ;; idomenu
 (global-set-key (kbd "M-i") 'idomenu)
