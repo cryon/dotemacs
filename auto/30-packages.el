@@ -4,6 +4,7 @@
 (load-package 'windresize)
 (load-package 'multiple-cursors)
 (load-package 'highlight-symbol)
+(load-package 'restclient)
 
 (load-package 'unkillable-scratch)
 (unkillable-scratch)
