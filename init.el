@@ -29,7 +29,7 @@
       '(("gnu"        . "http://elpa.gnu.org/packages/")
 	("elpa"       . "http://tromey.com/elpa/")
 	("marmalade"  . "http://marmalade-repo.org/packages/")
-	("melpa"      . "http://melpa.milkbox.net/packages/")))
+	("melpa"      . "https://melpa.org/packages/")))
 
 ;; Load configuration files ----------------------------------------------------
 
