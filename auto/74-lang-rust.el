@@ -3,8 +3,7 @@
 (load-package 'cargo)
 (load-package 'flycheck-rust)
 
-(setq racer-rust-src-path (getenv "RUST_SRC_PATH")
-      company-tooltip-align-annotations t)
+(setq company-tooltip-align-annotations t)
 
 (add-hook 'rust-mode-hook #'flycheck-mode)
 (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)

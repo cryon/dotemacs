@@ -13,9 +13,6 @@
                   "/Users/john/code/thirdparty/scala-2.11.7/bin")))
       (setenv "PATH" (mapconcat 'identity dirs path-separator))
 
-      (setenv "RUST_SRC_PATH"
-              "/Users/john/code/thirdparty/rustc-1.0.0/src/")
-
       (setenv "LIBRARY_PATH" "/usr/local/lib")
 
       (setenv "SCALA_HOME"
