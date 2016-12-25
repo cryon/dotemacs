@@ -8,14 +8,11 @@
 		  "/usr/X11/bin"
 		  "/opt/local/bin"
 		  "/opt/local/sbin"
-                  "/Users/john/.cabal/bin"
                   "/Users/john/bin"
-                  "/Users/john/code/thirdparty/scala-2.11.7/bin")))
+                  "/Users/john/.cargo/bin/"
+                  "/usr/local/opt/gnupg/libexec/gpgbin")))
       (setenv "PATH" (mapconcat 'identity dirs path-separator))
 
       (setenv "LIBRARY_PATH" "/usr/local/lib")
-
-      (setenv "SCALA_HOME"
-              "/Users/john/code/thirdparty/scala-2.11.7")
 
       (setq exec-path (append exec-path dirs)))))
