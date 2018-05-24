@@ -19,7 +19,7 @@
    magit-last-seen-setup-instructions "1.4.0")
   :bind
   (("C-x g" . magit-status)))
-  
+
 ;; -- Move text --
 (use-package move-text :ensure t
   :bind
@@ -56,6 +56,18 @@
   :config
   (projectile-global-mode))
 
+;; -- Autopair --
+(use-package autopair :ensure t
+  :hook (prog-mode . autopair-mode))
+
+;; -- Linum --
+(use-package linum :ensure t
+  :hook (prog-mode . linum-mode))
+
+;; -- Hl-line --
+(use-package hl-line :ensure t
+  :hook (prog-mode . hl-line-mode))
+
 ;; -- Ido mode --
 (use-package ido-vertical-mode :ensure t
   :init
@@ -88,7 +100,7 @@
      (let ((neo-window (neo-global--get-window)))
        (unless (null neo-window)
          (setq neo-window-width (window-width neo-window))))))
-  
+
   (defun neotree-project-dir-toggle ()
     "Open NeoTree using the project root, using find-file-in-project,
 or the current buffer directory."
@@ -110,6 +122,6 @@ or the current buffer directory."
               (neotree-dir project-dir))
           (if file-name
               (neotree-find file-name))))))
-  
+
   :bind
   (("M-ö" . neotree-project-dir-toggle)))
