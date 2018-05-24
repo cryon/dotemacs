@@ -36,8 +36,14 @@
 
  ;; editing
  indent-tabs-mode nil
- fill-column 80
- show-paren-delay 0)
+ fill-column 80 
+ show-paren-delay 0
+ show-trailing-whitespace 1)
 
 (show-paren-mode t)
 (winner-mode 1)
+
+;; remove any trailing whitespace
+(add-hook 'before-save-hook
+	  (lambda ()
+	    (delete-trailing-whitespace)))

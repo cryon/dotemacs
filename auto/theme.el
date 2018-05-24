@@ -20,5 +20,7 @@
      'show-paren-match nil :foreground full-green :bold t)
 
     (set-face-attribute
-     'show-paren-mismatch nil :foreground full-red :bold t)))
+     'show-paren-mismatch nil :foreground full-red :bold t)
 
+    (set-face-attribute
+     'trailing-whitespace nil :foreground full-red :underline t)))
