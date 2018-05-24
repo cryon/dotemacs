@@ -51,6 +51,9 @@
 ;; -- Twittering mode --
 (use-package twittering-mode :ensure t)
 
+;; -- Restclient --
+(use-package restclient :ensure t)
+
 ;; -- Projectile --
 (use-package projectile :ensure t
   :config
