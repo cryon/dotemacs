@@ -27,13 +27,9 @@
    (:eval
     (let* ((status-offset 2)
            (nyan-offset
-            (+ status-offset (if nyan-mode (+ 2 nyan-bar-length) 0)))
-           (jabber-offset
-            (+ nyan-offset (string-width jabber-activity-mode-string))))
+            (+ status-offset (if nyan-mode (+ 2 nyan-bar-length) 0))))
+
       (concat
-       ;; jabber activity
-       (propertize " " 'display `(space :align-to (- right ,jabber-offset)))
-       jabber-activity-mode-string
 
        ;; nyan-cat
        (when nyan-mode

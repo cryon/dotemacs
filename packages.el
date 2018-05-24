@@ -83,6 +83,13 @@
 
 (use-package ido-complete-space-or-hyphen :ensure t)
 
+;; -- Nyan mode --
+(use-package nyan-mode :ensure t
+  :init
+  (setq nyan-bar-length 16)
+  :config
+  (nyan-mode))
+
 ;; -- Neotree --
 (use-package neotree :ensure t
   :init
