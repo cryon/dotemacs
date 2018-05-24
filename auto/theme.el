@@ -1,26 +1,41 @@
-(use-package doom-themes
+(use-package color-theme-sanityinc-tomorrow
   :ensure t
-  
+
+  :after (linum)
+
   :init
-  (setq doom-themes-enable-bold t
-	doom-themes-enable-italic t)
-  (load-theme 'doom-spacegrey t)
-  
+  (load-theme 'sanityinc-tomorrow-night t)
+
   :config
-  (doom-themes-neotree-config)
-  (doom-themes-org-config)
-  
-  (let ((full-green "#00ff00")
-	(full-red   "#ff0000"))
-    
-    (set-face-attribute
-     'trailing-whitespace nil :foreground full-red :underline t)
+  (let ((bg "#1d1f21")
+	(fg "#c5c8c6")
+	(selection "#373b41")
+	(comment "#969896")
+	(red "#cc6666")
+	(full-red "#ff0000")
+	(yellow "#f0c674")
+	(green "#b5bd68")
+	(full-green "#00ff00"))
 
-    (set-face-attribute
-     'show-paren-match nil :foreground full-green :bold t)
+    ;; fringe
+    (set-face-attribute 'fringe nil :background bg)
+    (set-face-attribute 'git-gutter-fr:modified nil :background bg :foreground yellow)
+    (set-face-attribute 'git-gutter-fr:added nil :background bg :foreground green)
+    (set-face-attribute 'git-gutter-fr:deleted nil :background bg :foreground red)
 
-    (set-face-attribute
-     'show-paren-mismatch nil :foreground full-red :bold t)
+    ;; whitespace
+    (set-face-attribute 'trailing-whitespace nil :background bg :foreground red :underline t)
 
-    (set-face-attribute
-     'trailing-whitespace nil :foreground full-red :underline t)))
+    ;; paren
+    (set-face-attribute 'show-paren-match nil :background bg :foreground full-green :bold t)
+    (set-face-attribute 'show-paren-mismatch nil :background bg :foreground full-red :bold t)
+
+    ;; mode line
+    (set-face-attribute 'mode-line nil :box `(:line-width 1 :color ,selection))
+    (set-face-attribute 'mode-line-inactive nil :box `(:line-width 1 :color ,selection) :background bg)
+
+    ;; linum mode
+    (set-face-attribute 'linum nil :background bg :foreground selection)
+
+    ;; cursor
+    (set-cursor-color fg)))
