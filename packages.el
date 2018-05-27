@@ -94,6 +94,9 @@
   :config
   (nyan-mode))
 
+;; Gdscript mode --
+(use-package gdscript-mode :ensure t)
+
 ;; -- Neotree --
 (use-package neotree :ensure t
   :init
