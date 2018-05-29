@@ -32,7 +32,7 @@
 ;; -- Mutiple cursors --
 (use-package multiple-cursors :ensure t
   :bind
-  (("C-ä" . mc/mark-text-like-this)))
+  (("C-ä" . mc/mark-next-like-this)))
 
 ;; -- Unkillable scratch --
 (use-package unkillable-scratch :ensure t
