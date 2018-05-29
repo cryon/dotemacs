@@ -47,3 +47,8 @@
 (add-hook 'before-save-hook
 	  (lambda ()
 	    (delete-trailing-whitespace)))
+
+;; display line numbers in prog-mode
+(add-hook 'prog-mode-hook
+	  (lambda ()
+	    (display-line-numbers-mode)))

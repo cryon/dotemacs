@@ -1,8 +1,6 @@
 (use-package color-theme-sanityinc-tomorrow
   :ensure t
 
-  :after (linum)
-
   :init
   (load-theme 'sanityinc-tomorrow-night t)
 
@@ -34,8 +32,9 @@
     (set-face-attribute 'mode-line nil :box `(:line-width 1 :color ,selection))
     (set-face-attribute 'mode-line-inactive nil :box `(:line-width 1 :color ,selection) :background bg)
 
-    ;; linum mode
-    (set-face-attribute 'linum nil :background bg :foreground selection)
+    ;; line number mode
+    (set-face-attribute 'line-number nil :background bg :foreground selection)
+    (set-face-attribute 'line-number-current-line nil :background bg :foreground fg)
 
     ;; cursor
     (set-cursor-color fg)))

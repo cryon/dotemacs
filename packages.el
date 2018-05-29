@@ -63,10 +63,6 @@
 (use-package autopair :ensure t
   :hook (prog-mode . autopair-mode))
 
-;; -- Linum --
-(use-package linum :ensure t
-  :hook (prog-mode . linum-mode))
-
 ;; -- Hl-line --
 (use-package hl-line :ensure t
   :hook (prog-mode . hl-line-mode))
