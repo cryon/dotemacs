@@ -20,7 +20,6 @@
  ;; be a little less anoying
  visible-bell nil
  ring-bell-function 'ignore
- yes-or-no-p 'y-or-n-p
 
  ;; backup files
  backup-directory-alist `(("." . ,(concat config-dir "backups")))
@@ -36,7 +35,7 @@
 
  ;; editing
  indent-tabs-mode nil
- fill-column 80 
+ fill-column 80
  show-paren-delay 0
  show-trailing-whitespace 1)
 
@@ -52,3 +51,6 @@
 (add-hook 'prog-mode-hook
 	  (lambda ()
 	    (display-line-numbers-mode)))
+
+;; y or n instead of yes or no
+(defalias 'yes-or-no-p 'y-or-n-p)
