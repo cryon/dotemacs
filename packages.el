@@ -56,6 +56,9 @@
 
 ;; -- Projectile --
 (use-package projectile :ensure t
+  :bind
+  ("M-ä" . projectile-run-eshell)
+
   :config
   (projectile-global-mode))
 
