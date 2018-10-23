@@ -41,6 +41,7 @@
 
 (show-paren-mode t)
 (winner-mode 1)
+(delete-selection-mode 1)
 
 ;; remove any trailing whitespace
 (add-hook 'before-save-hook
