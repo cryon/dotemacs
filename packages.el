@@ -16,7 +16,8 @@
    magit-status-buffer-switch-function 'switch-to-buffer
    magit-diff-refine-hunk t
    magit-popup-use-prefix-argument 'default
-   magit-last-seen-setup-instructions "1.4.0")
+   magit-last-seen-setup-instructions "1.4.0"
+   magit-log-margin '(t age-abbreviated magit-log-margin-width :author 15))
   :bind
   (("C-x g" . magit-status)))
 
@@ -33,6 +34,12 @@
 (use-package multiple-cursors :ensure t
   :bind
   (("C-ä" . mc/mark-next-like-this)))
+
+;; -- Expand region --
+(use-package expand-region :ensure t
+  :bind
+  (("C-." . er/expand-region)
+   ("C-," . er/contract-region)))
 
 ;; -- Unkillable scratch --
 (use-package unkillable-scratch :ensure t
