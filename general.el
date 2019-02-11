@@ -5,7 +5,7 @@
 
 (setq
  ;; frame title
- frame-title-format "Emacs: %b"
+ frame-title-format ""
 
  ;; point position
  line-number-mode t
@@ -49,9 +49,9 @@
 	    (delete-trailing-whitespace)))
 
 ;; display line numbers in prog-mode
-(add-hook 'prog-mode-hook
-	  (lambda ()
-	    (display-line-numbers-mode)))
+;; (add-hook 'prog-mode-hook
+;; 	  (lambda ()
+;;	    (display-line-numbers-mode)))
 
 ;; y or n instead of yes or no
 (defalias 'yes-or-no-p 'y-or-n-p)

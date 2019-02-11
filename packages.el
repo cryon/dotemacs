@@ -74,8 +74,8 @@
   :hook (prog-mode . autopair-mode))
 
 ;; -- Hl-line --
-(use-package hl-line :ensure t
-  :hook (prog-mode . hl-line-mode))
+;; (use-package hl-line :ensure t
+;;  :hook (prog-mode . hl-line-mode))
 
 ;; -- Ido mode --
 (use-package ido-vertical-mode :ensure t
@@ -94,11 +94,11 @@
 (use-package ido-complete-space-or-hyphen :ensure t)
 
 ;; -- Nyan mode --
-(use-package nyan-mode :ensure t
-  :init
-  (setq nyan-bar-length 16)
-  :config
-  (nyan-mode))
+;; (use-package nyan-mode :ensure t
+;;   :init
+;;   (setq nyan-bar-length 16)
+;;   :config
+;;   (nyan-mode))
 
 ;; -- Gdscript mode --
 (use-package gdscript-mode :ensure t)
