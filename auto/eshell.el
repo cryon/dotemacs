@@ -31,10 +31,6 @@
 (defun eshell/emacs (file)
   (find-file file))
 
-;; magit - runs magit-status in current directory
-(defun eshell/magit ()
-  (call-interactively 'magit-status))
-
 ;; setup PATH
 (setq eshell-path-env
       (concat (getenv "PATH") path-separator eshell-path-env))
