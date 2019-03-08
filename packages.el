@@ -92,11 +92,6 @@
 ;; -- Gdscript mode --
 (use-package gdscript-mode :ensure t)
 
-;; -- Duplicate things
-(use-package duplicate-thing :ensure t
-  :bind
-  (("M-c" . duplicate-thing)))
-
 ;; -- Neotree --
 (use-package neotree :ensure t
   :init
