@@ -13,10 +13,8 @@
 (use-package magit :ensure t
   :init
   (setq
-   magit-status-buffer-switch-function 'switch-to-buffer
    magit-diff-refine-hunk t
    magit-popup-use-prefix-argument 'default
-   magit-last-seen-setup-instructions "1.4.0"
    magit-log-margin '(t age-abbreviated magit-log-margin-width :author 15))
   :bind
   (("C-x g" . magit-status)))
@@ -67,7 +65,7 @@
   ("M-ä" . projectile-run-eshell)
 
   :config
-  (projectile-global-mode))
+  (projectile-mode))
 
 ;; -- Autopair --
 (use-package autopair :ensure t
@@ -98,7 +96,6 @@
   (setq neo-window-fixed-size nil
 	neo-theme (if (display-graphic-p) 'icons 'arrow)
 	neo-show-updir-line nil
-	neo-modern-sidebar t
 	neo-auto-indent-point t
 	neo-cwd-line-style 'button)
 
@@ -134,3 +131,6 @@ or the current buffer directory."
 
   :bind
   (("M-ö" . neotree-project-dir-toggle)))
+
+;; -- All the Icons
+(use-package all-the-icons :ensure t)

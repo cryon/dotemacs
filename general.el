@@ -1,11 +1,10 @@
-(menu-bar-mode -1)
 (when window-system
   (scroll-bar-mode -1)
   (tool-bar-mode -1))
 
 (setq
  ;; frame title
- frame-title-format ""
+ frame-title-format "Emacs: %b"
 
  ;; point position
  line-number-mode t
@@ -29,14 +28,9 @@
  delete-old-versions t
  delete-by-moving-to-trash t
 
- ;; scroll nicely
- scroll-conservatively 10000
- scroll-step 1
-
  ;; editing
  indent-tabs-mode nil
  fill-column 80
- show-paren-delay 0
  show-trailing-whitespace 1)
 
 (show-paren-mode t)
