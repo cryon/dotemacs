@@ -1,4 +1,4 @@
-;; -- Setup use-package --
+; -- Setup use-package --
 (require 'package)
 
 (setq package-enable-at-startup nil)
@@ -8,6 +8,11 @@
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
+
+;; -- Theme --
+(use-package almost-mono-themes
+  :load-path "~/code/misc/almost-mono-themes"
+  :config (load-theme 'almost-mono-white t))
 
 ;; -- Magit --
 (use-package magit :ensure t
@@ -74,8 +79,8 @@
   :hook (prog-mode . autopair-mode))
 
 ;; -- Hl-line --
-(use-package hl-line :ensure t
-  :hook (prog-mode . hl-line-mode))
+;; (use-package hl-line :ensure t
+;;   :hook (prog-mode . hl-line-mode))
 
 ;; -- Ido mode --
 (use-package ido-vertical-mode :ensure t
@@ -94,11 +99,17 @@
 (use-package ido-complete-space-or-hyphen :ensure t)
 
 ;; -- Nyan mode --
-(use-package nyan-mode :ensure t
-  :init
-  (setq nyan-bar-length 16)
+;; (use-package nyan-mode :ensure t
+;;   :init
+;;   (setq nyan-bar-length 16)
+;;   :config
+;;   (nyan-mode))
+
+;; -- Ediff --
+(use-package ediff
   :config
-  (nyan-mode))
+  (progn
+    (setq ediff-split-window-function 'split-window-horizontally)))
 
 ;; -- Gdscript mode --
 (use-package gdscript-mode :ensure t)
