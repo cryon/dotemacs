@@ -1,4 +1,4 @@
-(set-frame-font "Source Code Pro-15" nil t)
+(set-frame-font "Source Code Pro-16" nil t)
 
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
