@@ -42,9 +42,9 @@
        ;; read-only / changed
        (propertize " " 'display `(space :align-to (- right ,status-offset)))
        (cond (buffer-read-only
-              (propertize "RO" 'face 'font-lock-warning-face))
+              (propertize "RO" 'face 'eshell-prompt))
              ((buffer-modified-p)
-              (propertize "* " 'face 'font-lock-warning-face))
+              (propertize "* " 'face 'eshell-prompt))
              (t "  ")))))))
 
 (defun special-buffer-p (buffer-name)
