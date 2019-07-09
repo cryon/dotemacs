@@ -1,5 +1,5 @@
 (use-package xterm-color :ensure t
-  :config
+  :init
   (setenv "TERM" "xterm-256color")
   (add-hook 'comint-preoutput-filter-functions 'xterm-color-filter)
   (setq comint-output-filter-functions
@@ -7,15 +7,16 @@
 
 (use-package esh-mode
   :init
-  (setq eshell-save-history-on-exit t)
+  (setq
+   eshell-save-history-on-exit t
 
-  ;; make the input history more bash-like
-  (setq eshell-hist-ignoredups t)
-  (setq eshell-cmpl-cycle-completions nil)
+   ;; make the input history more bash-like
+   eshell-hist-ignoredups t
+   eshell-cmpl-cycle-completions nil
 
-  ;; scroll to the bottom
-  (setq eshell-scroll-to-bottom-on-output t)
-  (setq eshell-scroll-show-maximum-output t)
+   ;; scroll to the bottom
+   eshell-scroll-to-bottom-on-output t
+   eshell-scroll-show-maximum-output t)
 
   :config
   (setq eshell-path-env
