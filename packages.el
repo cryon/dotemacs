@@ -31,6 +31,9 @@
   (("M-<up>" . move-text-up)
    ("M-<down>" . move-text-down)))
 
+;; -- Org babel restclient --
+(use-package ob-restclient :ensure t)
+
 ;; -- Windresize --
 (use-package windresize :ensure t)
 
