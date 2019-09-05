@@ -1,7 +1,6 @@
 ;;                        Cryon's Emacs configuration
 ;;                        ---------------------------
 
-;; -- Globals --
 (defvar config-dir (file-name-directory load-file-name))
 (defvar hostname (downcase (car (split-string system-name "\\."))))
 (defvar os (symbol-name system-type))

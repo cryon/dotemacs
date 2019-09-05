@@ -11,8 +11,7 @@
 
 ;; -- Theme --
 (use-package almost-mono-themes
-  :load-path "~/code/misc/almost-mono-themes"
-  :config (load-theme 'almost-mono-white t))
+  :config (load-theme 'almost-mono-black t))
 
 ;; -- Magit --
 (use-package magit :ensure t

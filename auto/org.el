@@ -23,3 +23,7 @@
    `(org-level-2 ((t (,@headline ,@variable-tuple :height 1.1))))
    `(org-level-1 ((t (,@headline ,@variable-tuple :height 1.2))))
    `(org-document-title ((t (,@headline ,@variable-tuple :height 1.2 :underline nil))))))
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((restclient . t)))
