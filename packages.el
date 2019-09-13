@@ -80,10 +80,6 @@
 (use-package autopair :ensure t
   :hook (prog-mode . autopair-mode))
 
-;; -- Hl-line --
-;; (use-package hl-line :ensure t
-;;   :hook (prog-mode . hl-line-mode))
-
 ;; -- Ido mode --
 (use-package ido-vertical-mode :ensure t
   :init
@@ -94,18 +90,11 @@
   (ido-mode t)
   (ido-vertical-mode 1))
 
+(use-package ido-complete-space-or-hyphen :ensure t)
+
 (use-package smex :ensure t
   :bind
   (("M-x" . smex)))
-
-(use-package ido-complete-space-or-hyphen :ensure t)
-
-;; -- Nyan mode --
-;; (use-package nyan-mode :ensure t
-;;   :init
-;;   (setq nyan-bar-length 16)
-;;   :config
-;;   (nyan-mode))
 
 ;; -- Ediff --
 (use-package ediff

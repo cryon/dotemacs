@@ -23,11 +23,9 @@
 
  ;; backup files
  backup-directory-alist `(("." . ,(concat config-dir "backups")))
- make-backup-files t
  backup-by-copying t
  version-control t
  delete-old-versions t
- delete-by-moving-to-trash t
 
  ;; scroll nicely
  scroll-conservatively 10000
