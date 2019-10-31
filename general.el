@@ -35,7 +35,10 @@
  indent-tabs-mode nil
  fill-column 80
  show-paren-delay 0
- show-trailing-whitespace 1)
+ show-trailing-whitespace 1
+
+ ;; customizations in own file
+ custom-file (cryon--config-path "customizations.el"))
 
 (show-paren-mode t)
 (winner-mode 1)

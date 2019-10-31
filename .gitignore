@@ -10,6 +10,7 @@ jabber-avatar-cache
 jabber-history
 .mc-lists.el
 secrets.gpg
+customizations.el
 projectile-bookmarks.eld
 eshell
 ido.last

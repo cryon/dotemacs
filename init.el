@@ -5,9 +5,13 @@
 (defvar hostname (downcase (car (split-string system-name "\\."))))
 (defvar os (symbol-name system-type))
 
+(defun cryon--config-path (file)
+  "Path to file in config directory"
+  (concat config-dir file))
+
 (defun cryon--load-custom (file)
   "Load file relative to the configuration folder"
-  (let ((path (concat config-dir file)))
+  (let ((path (cryon--config-path file)))
     (when (file-exists-p path)
       (load-file path))))
 
@@ -37,6 +41,7 @@
   (cryon--load-custom (concat "platform/" "host-" hostname ".el"))
   (cryon--load-custom "packages.el")
   (cryon--load-custom "keys.el")
+  (cryon--load-custom "customizations.el")
   (cryon--load-directory (concat config-dir "auto"))
 
   (server-start)
