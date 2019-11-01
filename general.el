@@ -37,6 +37,9 @@
  show-paren-delay 0
  show-trailing-whitespace 1
 
+ ;; dired
+ dired-dwim-target t
+
  ;; customizations in own file
  custom-file (cryon--config-path "customizations.el"))
 
