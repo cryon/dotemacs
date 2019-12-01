@@ -85,7 +85,8 @@
   :init
   (setq ido-enable-flex-matching t
 	ido-everywhere t
-	ido-vertical-define-keys 'C-n-C-p-up-and-down)
+	ido-vertical-define-keys 'C-n-C-p-up-and-down
+	ido-auto-merge-work-directories-length -1)
   :config
   (ido-mode t)
   (ido-vertical-mode 1))
