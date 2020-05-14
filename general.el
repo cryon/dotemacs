@@ -32,6 +32,9 @@
  ;; don't want lockfiles
  create-lockfiles nil
 
+ ;; place autosaves separatly
+ auto-save-file-name-transforms `((".*" ,(concat config-dir "saves/") t))
+
  ;; scroll nicely
  scroll-conservatively 10000
  scroll-step 1
