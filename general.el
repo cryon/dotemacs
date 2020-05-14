@@ -26,6 +26,8 @@
  backup-by-copying t
  version-control t
  delete-old-versions t
+ kept-new-versions 6
+ kept-old-versions 2
 
  ;; scroll nicely
  scroll-conservatively 10000
