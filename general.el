@@ -29,6 +29,9 @@
  kept-new-versions 6
  kept-old-versions 2
 
+ ;; don't want lockfiles
+ create-lockfiles nil
+
  ;; scroll nicely
  scroll-conservatively 10000
  scroll-step 1
