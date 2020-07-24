@@ -7,6 +7,9 @@
  ;; frame title
  frame-title-format "Emacs: %b"
 
+ ;; pixel-wise frame size works better with some WMs
+ frame-resize-pixelwise t
+
  ;; point position
  line-number-mode t
  column-number-mode t
