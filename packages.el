@@ -17,7 +17,7 @@
 (use-package magit :ensure t
   :init
   (setq
-   magit-status-buffer-switch-function 'switch-to-buffer
+   magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1
    magit-diff-refine-hunk t
    magit-popup-use-prefix-argument 'default
    magit-last-seen-setup-instructions "1.4.0"
