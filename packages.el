@@ -10,8 +10,9 @@
   (package-install 'use-package))
 
 ;; -- Theme --
-(use-package almost-mono-themes :ensure t
-  :config (load-theme 'almost-mono-black t))
+ (use-package almost-mono-themes :ensure t
+   :config (load-theme 'almost-mono-cream t))
+
 
 ;; -- Magit --
 (use-package magit :ensure t
