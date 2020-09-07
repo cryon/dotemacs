@@ -36,6 +36,18 @@
 (defun eshell/magit ()
   (call-interactively 'magit-status))
 
+;; simple but effective prompt
+(setq eshell-prompt-regexp "^[^#$\n]*[#$] "
+      eshell-prompt-function
+      (lambda nil
+        (concat
+	 ;;"[" (user-login-name) "@" (system-name) " "
+	 (if (string= (eshell/pwd) (getenv "HOME"))
+	     "~" (eshell/basename (eshell/pwd)))
+	 ;;"]"
+	 " "
+	 (if (= (user-uid) 0) "# " "$ "))))
+
 ;; setup PATH
 (setq eshell-path-env
       (concat (getenv "PATH") path-separator eshell-path-env))
