@@ -1,4 +1,4 @@
-
+(require 'tramp)
 ;; from https://willschenk.com/articles/2020/tramp_tricks/
 ;; Open files in Docker containers like so: /docker:drunk_bardeen:/etc/passwd
 (push

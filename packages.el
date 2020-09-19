@@ -10,8 +10,11 @@
   (package-install 'use-package))
 
 ;; -- Theme --
- (use-package almost-mono-themes :ensure t
-   :config (load-theme 'almost-mono-cream t))
+(use-package almost-mono-themes
+  :ensure t
+  :if window-system
+  :config
+  (load-theme 'almost-mono-cream t))
 
 
 ;; -- Magit --
@@ -23,6 +26,8 @@
    magit-popup-use-prefix-argument 'default
    magit-last-seen-setup-instructions "1.4.0"
    magit-log-margin '(t age-abbreviated magit-log-margin-width :author 15))
+  (when (not window-system)
+    (setq magit-section-visibility-indicator '("..." . t)))
   :bind
   (("C-x g" . magit-status)))
 
@@ -55,13 +60,16 @@
   (unkillable-scratch))
 
 ;; -- Git gutter --
-(if window-system
-    (use-package git-gutter-fringe :ensure t
-      :init
-      (setq git-gutter:hide-gutter t)
-      :config
-      (global-git-gutter-mode +1))
-  (use-package git-gutter))
+(use-package git-gutter-fringe :ensure t
+	     :if window-system
+	     :init
+	     (setq git-gutter:hide-gutter t)
+	     :config
+	     (global-git-gutter-mode +1))
+
+(use-package git-gutter
+  :ensure t
+  :if window-system)
 
 ;; -- Twittering mode --
 (use-package twittering-mode :ensure t)
