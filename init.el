@@ -3,7 +3,7 @@
 
 (defvar config-dir (file-name-directory load-file-name))
 (defvar hostname (downcase (car (split-string system-name "\\."))))
-(defvar os (symbol-name system-type))
+(defvar os (car (last (split-string (symbol-name system-type) "/"))))
 
 (defun cryon--config-path (file)
   "Path to file in config directory"
