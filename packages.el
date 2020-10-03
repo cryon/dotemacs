@@ -14,8 +14,7 @@
   :ensure t
   :if window-system
   :config
-  (load-theme 'almost-mono-cream t))
-
+  (load-theme 'almost-mono-gray t))
 
 ;; -- Magit --
 (use-package magit :ensure t
