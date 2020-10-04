@@ -5,7 +5,7 @@
   (setq comint-output-filter-functions
 	(remove 'ansi-color-process-output comint-output-filter-functions)))
 
-(use-package esh-mode
+(use-package eshell
   :init
   (setq
    eshell-save-history-on-exit t
@@ -16,11 +16,13 @@
 
    ;; scroll to the bottom
    eshell-scroll-to-bottom-on-output t
-   eshell-scroll-show-maximum-output t)
+   eshell-scroll-show-maximum-output t
 
-  :config
-  (setq eshell-path-env
-	(concat (getenv "PATH") path-separator eshell-path-env)))
+   eshell-path-env (getenv "PATH"))
+
+  :hook
+  ((eshell-pre-command . (lambda () (setq eshell-path-env (getenv "PATH"))))
+   (eshell-mode-hook . (lambda () (setq eshell-path-env (getenv "PATH"))))))
 
 ;; clear - clears the buffer
 (defun eshell/clear ()
@@ -47,7 +49,3 @@
 	 ;;"]"
 	 " "
 	 (if (= (user-uid) 0) "# " "$ "))))
-
-;; setup PATH
-(setq eshell-path-env
-      (concat (getenv "PATH") path-separator eshell-path-env))
