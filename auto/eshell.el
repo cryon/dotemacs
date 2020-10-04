@@ -27,8 +27,7 @@
 ;; clear - clears the buffer
 (defun eshell/clear ()
   (interactive)
-  (let ((inhibit-read-only t))
-    (erase-buffer)))
+  (eshell/clear-scrollback))
 
 ;; emacs file - opens file
 (defun eshell/emacs (file)
