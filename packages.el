@@ -36,6 +36,19 @@
   (("M-<up>" . move-text-up)
    ("M-<down>" . move-text-down)))
 
+;; -- Doom modeline --
+(use-package doom-modeline :ensure t
+  :custom
+  (doom-modeline-icon nil)
+  (doom-modeline-height 0)
+  (doom-modeline-bar-width 10)
+
+  :custom-face
+  (doom-modeline-bar ((nil)))
+
+  :init
+  (doom-modeline-mode 1))
+
 ;; -- Org babel restclient --
 (use-package ob-restclient :ensure t)
 
