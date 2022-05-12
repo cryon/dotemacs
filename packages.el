@@ -176,10 +176,7 @@ or the current buffer directory."
   :bind
   (("M-ö" . neotree-project-dir-toggle)))
 
-;; -- Yasnippet --
-(use-package yasnippet
+;; -- Yaml mode --
+(use-package yaml-mode
   :ensure t
-  :init (add-hook 'prog-mode-hook 'yas-minor-mode)
-  :config (use-package yasnippet-snippets
-	    :ensure t)
-  (yas-reload-all))
+  :hook ((yaml-mode . whitespace-mode)))
