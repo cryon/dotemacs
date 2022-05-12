@@ -1,7 +1,7 @@
 (when window-system
   (scroll-bar-mode -1)
   (tool-bar-mode -1)
-  (set-frame-size (selected-frame) 100 35))
+  (set-frame-size (selected-frame) 100 45))
 
 (setq
  ;; frame title
