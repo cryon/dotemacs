@@ -91,6 +91,10 @@
 
 ;; -- Projectile --
 (use-package projectile :ensure t
+  :init
+  (setq projectile-switch-project-action
+	(lambda () (magit-status (projectile-project-root))))
+
   :bind
   ("M-ä" . projectile-run-eshell)
 
