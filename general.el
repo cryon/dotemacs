@@ -51,6 +51,8 @@
  ;; dired
  dired-dwim-target t
 
+ ;; Supress compile warnings
+ warning-minimum-level :error
  ;; customizations in own file
  custom-file (cryon--config-path "customizations.el"))
 
