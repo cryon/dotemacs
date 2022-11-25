@@ -53,6 +53,10 @@
 
  ;; Supress compile warnings
  warning-minimum-level :error
+
+ ;; Need to see the tetrominos more clearly
+ gamegrid-glyph-height-mm 7.0
+
  ;; customizations in own file
  custom-file (cryon--config-path "customizations.el"))
 
