@@ -1,10 +1,3 @@
-;; align-regexp is cool
-(global-set-key
- (kbd "C-x a")
- 'align-regexp)
-
-;; C-a moves point to the first non whitespace character. If already on
-;; first character, move point to the beginning of line
 (global-set-key
  (kbd "C-a")
  (lambda ()
@@ -13,6 +6,10 @@
      (back-to-indentation)
      (and (= oldpos (point))
 	  (beginning-of-line)))))
+
+(global-set-key
+ (kbd "C-x a")
+ 'align-regexp)
 
 ;; Navigate between windows... Quake style (wasd)
 (global-set-key (kbd "C-S-a") 'windmove-left)

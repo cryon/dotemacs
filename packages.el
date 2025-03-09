@@ -1,4 +1,3 @@
-; -- Setup use-package --
 (require 'package)
 
 (setq package-enable-at-startup nil)
@@ -9,88 +8,99 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-;; -- Theme --
 (use-package almost-mono-themes
   :ensure t
   :if window-system
   :config
-  (load-theme 'almost-mono-gray t))
+  (load-theme 'almost-mono-white t))
 
-;; -- Magit --
+(use-package ligature
+  :ensure t
+  :config
+  (ligature-set-ligatures
+   'prog-mode
+   '("&&" "***" "*>" "\\\\" "||" "|>" "::"
+     "==" "===" "==>" "=>" "=<<" "!!" ">>"
+     ">>=" ">>>" ">>-" ">-" "->" "-<" "-<<"
+     "<*" "<*>" "<|" "<|>" "<$>" "<>" "<-"
+     "<<" "<<<" "<+>" ".." "..." "++" "+++"
+     "/=" ":::" ">=>" "->>" "<=>" "<=<" "<->"))
+  (global-ligature-mode t))
+
 (use-package magit :ensure t
   :init
   (setq
    magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1
    magit-diff-refine-hunk t
    magit-popup-use-prefix-argument 'default
-   magit-last-seen-setup-instructions "1.4.0"
    magit-log-margin '(t age-abbreviated magit-log-margin-width :author 15))
   (when (not window-system)
     (setq magit-section-visibility-indicator '("..." . t)))
   :bind
   (("C-x g" . magit-status)))
 
-;; -- Move text --
 (use-package move-text :ensure t
-  :bind
-  (("M-<up>" . move-text-up)
-   ("M-<down>" . move-text-down)))
+  :bind (("M-<up>" . move-text-up)
+	 ("M-<down>" . move-text-down)))
 
-;; -- Doom modeline --
 (use-package doom-modeline :ensure t
   :custom
   (doom-modeline-icon nil)
   (doom-modeline-height 0)
   (doom-modeline-bar-width 10)
 
-  :custom-face
-  (doom-modeline-bar ((nil)))
-
   :init
   (doom-modeline-mode 1))
 
-;; -- Org babel restclient --
-(use-package ob-restclient :ensure t)
+(use-package eshell
+  :init
+  (setq
+   eshell-save-history-on-exit t
+   eshell-hist-ignoredups t
+   eshell-cmpl-cycle-completions nil
+   eshell-scroll-to-bottom-on-input 'all))
 
-;; -- Windresize --
+(use-package esh-mode
+  :config
+  (defun eshell/clear ()
+    (interactive)
+    (eshell/clear-scrollback))
+
+  (defun eshell/emacs (file)
+    (find-file file)))
+
 (use-package windresize :ensure t)
 
-;; -- Mutiple cursors --
 (use-package multiple-cursors :ensure t
   :bind
   (("C-ä" . mc/mark-next-like-this)))
 
-;; -- Expand region --
 (use-package expand-region :ensure t
   :bind
   (("C-." . er/expand-region)
    ("C-," . er/contract-region)))
 
-;; -- Unkillable scratch --
 (use-package unkillable-scratch :ensure t
   :config
   (unkillable-scratch))
 
-;; -- Git gutter --
 (use-package git-gutter-fringe :ensure t
-	     :if window-system
-	     :init
-	     (setq git-gutter:hide-gutter t)
-	     :config
-	     (global-git-gutter-mode +1))
+  :if window-system
+  :init
+  (setq git-gutter:hide-gutter t)
+  :config
+  (global-git-gutter-mode +1))
 
 (use-package git-gutter
   :ensure t
   :if window-system)
 
-;; -- Twittering mode --
-(use-package twittering-mode :ensure t)
-
-;; -- Restclient --
 (use-package restclient :ensure t)
 
-;; -- Projectile --
 (use-package projectile :ensure t
+  :init
+  (setq projectile-switch-project-action
+	(lambda () (magit-status (projectile-project-root))))
   :bind
   ("M-ä" . projectile-run-eshell)
 
@@ -98,11 +108,6 @@
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (projectile-global-mode))
 
-;; -- Autopair --
-(use-package autopair :ensure t
-  :hook (prog-mode . autopair-mode))
-
-;; -- Ido mode --
 (use-package ido-vertical-mode :ensure t
   :init
   (setq ido-enable-flex-matching t
@@ -119,21 +124,19 @@
   :bind
   (("M-x" . smex)))
 
-;; -- Ediff --
 (use-package ediff
   :config
   (progn
     (setq ediff-split-window-function 'split-window-horizontally)))
 
-;; -- Gdscript mode --
 (use-package gdscript-mode :ensure t)
 
-;; -- Duplicate things
 (use-package duplicate-thing :ensure t
   :bind
   (("M-c" . duplicate-thing)))
 
-;; -- Neotree --
+(use-package all-the-icons :ensure t)
+
 (use-package neotree :ensure t
   :init
   (setq neo-window-fixed-size nil
@@ -176,7 +179,18 @@ or the current buffer directory."
   :bind
   (("M-ö" . neotree-project-dir-toggle)))
 
-;; -- Yaml mode --
 (use-package yaml-mode
   :ensure t
   :hook ((yaml-mode . whitespace-mode)))
+
+(use-package markdown-mode
+  :ensure t
+  :mode ("README\\.md\\'" . gfm-mode)
+  :init (setq markdown-command "multimarkdown")
+  :custom-face
+  (markdown-header-face-1 ((t (:inherit markdown-header-face :foreground "black" :height 1.8 :underline (:color "#777777")))))
+  (markdown-header-face-2 ((t (:inherit markdown-header-face :foreground "black" :height 1.4))))
+  (markdown-header-face-3 ((t (:inherit markdown-header-face :foreground "black" :height 1.2))))
+  (markdown-header-face-4 ((t (:inherit markdown-header-face :foreground "black" :height 1.0))))
+  :bind
+  (("C-c C-e" . markdown-do)))

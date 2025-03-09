@@ -17,8 +17,10 @@
  ;; no startup messages
  inhibit-default-init t
  inhibit-startup-message t
- inhibit-startup-echo-area-message (user-login-name)
  initial-scratch-message ""
+
+ ;; i usually write text in the scratch buffer
+ initial-major-mode 'text-mode
 
  ;; be a little less anoying
  visible-bell nil
@@ -36,7 +38,7 @@
  create-lockfiles nil
 
  ;; place autosaves separatly
- auto-save-file-name-transforms `((".*" ,(concat config-dir "saves/") t))
+ auto-save-file-name-transforms `((".*" ,(concat config-dir "autosaves/") t))
 
  ;; scroll nicely
  scroll-conservatively 10000
@@ -46,17 +48,20 @@
  indent-tabs-mode nil
  fill-column 80
  show-paren-delay 0
- show-trailing-whitespace 1
+
+ ;; Need to see the tetrominos more clearly
+ gamegrid-glyph-height-mm 7.0
 
  ;; dired
  dired-dwim-target t
 
  ;; customizations in own file
- custom-file (cryon--config-path "customizations.el"))
+ custom-file (--config-path "customizations.el"))
 
 (show-paren-mode t)
 (winner-mode 1)
 (delete-selection-mode 1)
+(fset 'display-startup-echo-area-message 'ignore)
 
 ;; remove any trailing whitespace
 (add-hook 'before-save-hook
@@ -65,7 +70,6 @@
 
 ;; y or n instead of yes or no
 (defalias 'yes-or-no-p 'y-or-n-p)
-
 
 ;; from https://christiantietze.de/posts/2021/06/emacs-center-window-single-function/
 (defun my/frame-recenter (&optional frame)
@@ -86,3 +90,14 @@ If FRAME is omitted or nil, use currently selected frame."
 
 (add-hook 'after-init-hook #'my/frame-recenter)
 (add-hook 'after-make-frame-functions #'my/frame-recenter)
+
+;; Not sure where to put this...
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(markdown-header-face-1 ((t (:inherit markdown-header-face :foreground "white" :height 1.8 :underline (:color "#777777")))))
+ '(markdown-header-face-2 ((t (:inherit markdown-header-face :foreground "white" :height 1.4))))
+ '(markdown-header-face-3 ((t (:inherit markdown-header-face :foreground "white" :height 1.2))))
+ '(markdown-header-face-4 ((t (:inherit markdown-header-face :foreground "white" :height 1.0)))))
