@@ -16,6 +16,7 @@
 (--load-config-file "general.el")
 (--load-config-file "packages.el")
 (--load-config-file "keybindings.el")
+(--load-config-file "functions.el")
 
 (when (eq system-type 'darwin)
   (--load-config-file "mac-configurations.el"))
