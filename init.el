@@ -19,3 +19,5 @@
 
 (when (eq system-type 'darwin)
   (--load-config-file "mac-configurations.el"))
+(cd "~")
+(eshell)
