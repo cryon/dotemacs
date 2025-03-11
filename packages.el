@@ -39,6 +39,16 @@
   :bind
   (("C-x g" . magit-status)))
 
+(use-package company :ensure t
+  :hook (prog-mode . company-mode)
+  :config
+  (setq
+   company-minimum-prefix-length 1
+   company-idle-delay  (lambda ()
+			 (if (company-in-string-or-comment) nil 0.0)))
+  :bind (("C-n" . company-select-next)
+	 ("C-p" . company-select-previous)))
+
 (use-package move-text :ensure t
   :bind (("M-<up>" . move-text-up)
 	 ("M-<down>" . move-text-down)))
