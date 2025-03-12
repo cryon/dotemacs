@@ -198,9 +198,9 @@ or the current buffer directory."
   :mode ("README\\.md\\'" . gfm-mode)
   :init (setq markdown-command "multimarkdown")
   :custom-face
-  (markdown-header-face-1 ((t (:inherit markdown-header-face :foreground "black" :height 1.8 :underline (:color "#777777")))))
-  (markdown-header-face-2 ((t (:inherit markdown-header-face :foreground "black" :height 1.4))))
-  (markdown-header-face-3 ((t (:inherit markdown-header-face :foreground "black" :height 1.2))))
-  (markdown-header-face-4 ((t (:inherit markdown-header-face :foreground "black" :height 1.0))))
+  (markdown-header-face-1 ((t (:inherit default :foreground nil :bold t :height 1.8 :underline (:color "#777777")))))
+  (markdown-header-face-2 ((t (:inherit default :foreground nil :bold t :height 1.4))))
+  (markdown-header-face-3 ((t (:inherit default :foreground nil :bold t :height 1.2))))
+  (markdown-header-face-4 ((t (:inherit default :foreground nil :bold t :height 1.0))))
   :bind
   (("C-c C-e" . markdown-do)))
