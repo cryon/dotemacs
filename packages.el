@@ -202,5 +202,6 @@ or the current buffer directory."
   (markdown-header-face-2 ((t (:inherit default :foreground nil :bold t :height 1.4))))
   (markdown-header-face-3 ((t (:inherit default :foreground nil :bold t :height 1.2))))
   (markdown-header-face-4 ((t (:inherit default :foreground nil :bold t :height 1.0))))
+  (markdown-code-face ((t :inherit default)))
   :bind
   (("C-c C-e" . markdown-do)))
