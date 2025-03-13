@@ -9,48 +9,65 @@
   (--generate-month-table year month))
 
 (defun --generate-month-table (year month)
-  (let ((total-hours 0)
-        (day 1)
-        (time (encode-time 0 0 0 1 month year)))
-    (insert "|Date|Hours|Comment|\n|----|-----|-------|\n")
-    (while (= (nth 4 (decode-time time)) month)
-      (let* ((weekday (nth 6 (decode-time time)))
-             (weekend (or (= weekday 0) (= weekday 6)))
-             (hours (if weekend "-" "8")))
-        (unless weekend
-          (setq total-hours (+ total-hours 8)))
-        (insert (format "|%s|%s|  |\n"
-                        (format-time-string "%Y-%m-%d" time) hours)))
-      (setq time (encode-time 0 0 0 (setq day (1+ day)) month year)))
-    (insert "|-----------|-----|--------|\n")
-    (insert (format "|Total Hours|%d|  |\n" total-hours))
-    (save-excursion
-      (previous-line)
-      (markdown-table-align))))
+  (markdown-insert-table 1 3 'left)
+  (insert "Date")    (markdown-table-forward-cell)
+  (insert "Hours")   (markdown-table-forward-cell)
+  (insert "Comment") (markdown-table-forward-cell)
+  (insert "-")       (markdown-table-next-row)
 
-(defun md-timesheed/sum-rows-above ()
-  "Sums the column above and replace the content of the current cell with that sum"
+  (let ((total-hours 0)
+	(day 1)
+	(time (encode-time 0 0 0 1 month year)))
+    (while (= (nth 4 (decode-time time)) month)
+      (let* ((day-of-week (nth 6 (decode-time time)))
+	     (is-weekend (or (= day-of-week 0) (= day-of-week 6)))
+	     (hours (if is-weekend 0 8)))
+
+	(when (or (= day-of-week 1) (= day 1))
+	  (when (not (= day 1))
+	    (insert "-")
+	    (markdown-table-next-row))
+
+	  (insert (format-time-string "Week %V" time))
+	  (markdown-table-next-row)
+	  (markdown-table-next-row))
+
+	(setq total-hours (+ total-hours hours))
+
+	(insert (format-time-string "%Y-%m-%d %a" time))
+	(markdown-table-forward-cell)
+
+	(insert (if (= 0 hours) "-" (number-to-string hours)))
+	(markdown-table-forward-cell)
+	(markdown-table-forward-cell)
+	(setq time (encode-time 0 0 0 (setq day (1+ day)) month year))))
+
+    (insert "-")
+    (markdown-table-next-row)
+    (insert "Total hours")
+    (markdown-table-forward-cell)
+    (insert (number-to-string total-hours))
+    (markdown-table-align)))
+
+(defun md-timesheet/sum-hours ()
+  "Calculate the total number of hours in the timesheet"
   (interactive)
   (when (not (markdown-table-at-point-p))
     (user-error "Point is not in a markdown table"))
 
-  (let ((col (markdown-table-get-column))
-	(end-line (line-number-at-pos))
-	(sum 0))
+  (save-excursion
+    (markdown-table-goto-dline 2)
+    (markdown-table-goto-column 2)
 
-    (save-excursion
-      (goto-char (markdown-table-begin))
-
-      (while (not (= (line-number-at-pos) end-line))
-	(let* ((cell-content (markdown-table-get-cell col))
+    (let ((total-hours 0)
+	  (last-row (line-number-at-pos (markdown-table-end))))
+      (while (not (= (line-number-at-pos) (- last-row 1)))
+	(let* ((cell-content (markdown-table-get-cell 2))
 	       (numeric-value (string-to-number cell-content)))
 	  (when (not (equal numeric-value 0.0))
-            (setq sum (+ sum numeric-value)))
+            (setq total-hours (+ total-hours numeric-value)))
 	  (next-line)))
 
-      (save-excursion
-	(search-backward-regexp "|")
-	(forward-char)
-	(kill-word 1)
-	(insert (number-to-string sum))
-	(markdown-table-align)))))
+      (kill-word 1)
+      (insert (number-to-string total-hours))
+      (markdown-table-align))))
