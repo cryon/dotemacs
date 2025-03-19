@@ -46,8 +46,9 @@
    company-minimum-prefix-length 1
    company-idle-delay  (lambda ()
 			 (if (company-in-string-or-comment) nil 0.0)))
-  :bind (("C-n" . company-select-next)
-	 ("C-p" . company-select-previous)))
+  :bind (:map company-active-map
+	      ("C-n" . company-select-next-or-abort)
+	      ("C-p" . company-select-previous-or-abort)))
 
 (use-package move-text :ensure t
   :bind (("M-<up>" . move-text-up)
