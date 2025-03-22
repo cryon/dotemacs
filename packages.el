@@ -50,6 +50,9 @@
 	      ("C-n" . company-select-next-or-abort)
 	      ("C-p" . company-select-previous-or-abort)))
 
+(use-package company-box :ensure t
+  :hook (company-mode . company-box-mode))
+
 (use-package move-text :ensure t
   :bind (("M-<up>" . move-text-up)
 	 ("M-<down>" . move-text-down)))
