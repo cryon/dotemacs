@@ -16,3 +16,6 @@
 (global-set-key (kbd "C-S-d") 'windmove-right)
 (global-set-key (kbd "C-S-w") 'windmove-up)
 (global-set-key (kbd "C-S-s") 'windmove-down)
+
+;; Do not use space to complete words in minibuffer
+(define-key minibuffer-local-completion-map (kbd "SPC") nil)
