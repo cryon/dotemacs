@@ -122,26 +122,22 @@
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (projectile-global-mode))
 
-(use-package ido-vertical-mode :ensure t
+(use-package vertico
+  :ensure t
   :init
-  (setq ido-enable-flex-matching t
-	ido-everywhere t
-	ido-vertical-define-keys 'C-n-C-p-up-and-down
-	ido-auto-merge-work-directories-length -1)
+  (vertico-mode)
   :config
-  (ido-mode t)
-  (ido-vertical-mode 1))
+  (setq completion-styles '(basic substring partial-completion flex))
+  :custom
+  (vertico-cycle t))
 
-(use-package ido-complete-space-or-hyphen :ensure t)
-
-(use-package smex :ensure t
-  :bind
-  (("M-x" . smex)))
+(use-package savehist
+  :init
+  (savehist-mode))
 
 (use-package ediff
   :config
-  (progn
-    (setq ediff-split-window-function 'split-window-horizontally)))
+  (setq ediff-split-window-function 'split-window-horizontally))
 
 (use-package gdscript-mode :ensure t)
 
