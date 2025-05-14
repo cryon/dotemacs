@@ -146,6 +146,13 @@
   :init
   (savehist-mode))
 
+(use-package marginalia
+  :ensure t
+  :config
+  (setq marginalia-align 'right)
+  :init
+  (marginalia-mode))
+
 (use-package ediff
   :config
   (setq ediff-split-window-function 'split-window-horizontally))
