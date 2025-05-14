@@ -21,3 +21,8 @@ smex-items
 games
 bookmarks
 saves
+/.DS_Store
+/.org-id-locations
+/history
+/org-roam.db
+/transient/
