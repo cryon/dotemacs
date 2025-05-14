@@ -127,9 +127,20 @@
   :init
   (vertico-mode)
   :config
-  (setq completion-styles '(basic substring partial-completion flex))
+  (setq completion-styles '(basic substring partial-completion flex)
+	vertico-preselect 'first)
   :custom
   (vertico-cycle t))
+
+(use-package vertico-directory
+  :after vertico
+  :ensure nil
+  :bind (:map vertico-map)
+              ("RET" . vertico-directory-enter)
+              ;("DEL" . vertico-directory-delete-char)
+              ;("M-DEL" . vertico-directory-delete-word))
+  ;; Tidy shadowed file names
+  :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
 
 (use-package savehist
   :init
