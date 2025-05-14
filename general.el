@@ -56,12 +56,16 @@
  dired-dwim-target t
 
  ;; customizations in own file
- custom-file (--config-path "customizations.el"))
+ custom-file (--config-path "customizations.el")
+
+ ;; I heard you like minibuffers
+ enable-recursive-minibuffers t)
 
 (show-paren-mode t)
 (winner-mode 1)
 (delete-selection-mode 1)
 (fset 'display-startup-echo-area-message 'ignore)
+(minibuffer-depth-indicate-mode)
 
 ;; remove any trailing whitespace
 (add-hook 'before-save-hook
