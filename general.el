@@ -59,7 +59,8 @@
  custom-file (--config-path "customizations.el")
 
  ;; I heard you like minibuffers
- enable-recursive-minibuffers t)
+ enable-recursive-minibuffers t
+ )
 
 (show-paren-mode t)
 (winner-mode 1)

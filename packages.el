@@ -127,8 +127,7 @@
   :init
   (vertico-mode)
   :config
-  (setq completion-styles '(basic substring partial-completion flex)
-	vertico-preselect 'first)
+  (setq vertico-preselect 'first)
   :custom
   (vertico-cycle t))
 
@@ -145,6 +144,13 @@
 (use-package savehist
   :init
   (savehist-mode))
+
+(use-package orderless
+  :ensure t
+  :custom
+  (completion-styles '(orderless basic))
+  (completion-category-overrides '((file (styles basic partial-completion))))
+  (orderless-matching-styles '(orderless-literal orderless-flex)))
 
 (use-package marginalia
   :ensure t
