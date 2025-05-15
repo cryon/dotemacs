@@ -1,4 +1,4 @@
-(require 'package)
+(require 'packag)
 
 (setq package-enable-at-startup nil)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
@@ -170,6 +170,11 @@
   (("M-c" . duplicate-thing)))
 
 (use-package all-the-icons :ensure t)
+
+(use-package gptel
+  :ensure t
+  :config
+  (setq gptel-default-mode #'org-mode))
 
 (use-package neotree :ensure t
   :init
