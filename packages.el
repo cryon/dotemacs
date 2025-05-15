@@ -134,10 +134,11 @@
 (use-package vertico-directory
   :after vertico
   :ensure nil
-  :bind (:map vertico-map)
-              ("RET" . vertico-directory-enter)
-              ;("DEL" . vertico-directory-delete-char)
-              ;("M-DEL" . vertico-directory-delete-word))
+  :bind (:map vertico-map
+	      ;; ("M-DEL" . vertico-directory-delete-word)
+	      ("DEL" . vertico-directory-delete-char)
+	      ("RET" . vertico-directory-enter))
+
   ;; Tidy shadowed file names
   :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
 
