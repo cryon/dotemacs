@@ -39,19 +39,10 @@
   :bind
   (("C-x g" . magit-status)))
 
-(use-package company :ensure t
-  :hook (prog-mode . company-mode)
-  :config
-  (setq
-   company-minimum-prefix-length 1
-   company-idle-delay  (lambda ()
-			 (if (company-in-string-or-comment) nil 0.0)))
-  :bind (:map company-active-map
-	      ("C-n" . company-select-next-or-abort)
-	      ("C-p" . company-select-previous-or-abort)))
-
-(use-package company-box :ensure t
-  :hook (company-mode . company-box-mode))
+(use-package consult
+  :ensure t
+  :init
+  (setq completion-in-region-function #'consult-completion-in-region))
 
 (use-package move-text :ensure t
   :bind (("M-<up>" . move-text-up)
