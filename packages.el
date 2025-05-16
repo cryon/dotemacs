@@ -214,6 +214,9 @@ or the current buffer directory."
   :ensure t
   :hook ((yaml-mode . whitespace-mode)))
 
+(use-package visual-fill-column
+  :ensure t)
+
 (use-package markdown-mode
   :ensure t
   :mode ("README\\.md\\'" . gfm-mode)
