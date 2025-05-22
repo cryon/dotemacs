@@ -41,6 +41,7 @@
 
 (use-package consult
   :ensure t
+  :bind ("C-M-f" . consult-ripgrep)
   :init
   (setq completion-in-region-function #'consult-completion-in-region))
 
