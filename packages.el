@@ -8,17 +8,14 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-(use-package almost-mono-themes
-  :ensure t
-  :if window-system
-  :config
-  (load-theme 'almost-mono-white t))
+(use-package almost-mono-themes :ensure t)
 
 (use-package ligature
   :ensure t
   :config
   (ligature-set-ligatures
    'prog-mode
+   ;; Tuned for hasklig
    '("&&" "***" "*>" "\\\\" "||" "|>" "::"
      "==" "===" "==>" "=>" "=<<" "!!" ">>"
      ">>=" ">>>" ">>-" ">-" "->" "-<" "-<<"
@@ -26,6 +23,14 @@
      "<<" "<<<" "<+>" ".." "..." "++" "+++"
      "/=" ":::" ">=>" "->>" "<=>" "<=<" "<->"))
   (global-ligature-mode t))
+
+(use-package org
+  :custom-face
+  (org-document-title ((t (:weight bold :height 1.5 :underline nil))))
+  (org-level-1 ((t (:weight bold :height 1.3))))
+  (org-level-2 ((t (:weight bold :height 1.2))))
+  (org-level-3 ((t (:weight bold :height 1.1))))
+  (org-level-4 ((t (:weight bold :height 1.0)))))
 
 (use-package magit :ensure t
   :init

@@ -26,3 +26,4 @@ saves
 /history
 /org-roam.db
 /transient/
+.customizations.el

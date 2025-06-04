@@ -30,5 +30,9 @@
 (when (eq system-type 'windows-nt)
   (--load-config-file "win-configurations.el"))
 
+;; customizations in own file
+(setq custom-file (--config-path ".customizations.el"))
+(load custom-file)
+
 (cd "~")
 (eshell)
