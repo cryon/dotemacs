@@ -1,0 +1,7 @@
+* Cryon's Emacs configuration
+
+It sparks joy.
+
+1. Clone into =~/.emacs.d=
+2. Start Emacs
+3. Enjoy
