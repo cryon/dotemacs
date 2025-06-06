@@ -105,6 +105,15 @@
   (defun eshell/emacs (file)
     (find-file file)))
 
+(use-package project
+  :init
+  (setq project-switch-commands
+	'((project-find-file "Find file" "f")
+          (project-dired "Dired" "d")
+          (project-eshell "Eshell" "e")
+          (consult-ripgrep "ripgrep" "g")
+          (magit-project-status "Magit" "m"))))
+
 ;; -- Vertico, Consult, Marginalia, Orderless --------------------------------
 
 (use-package vertico :ensure t :defer t
