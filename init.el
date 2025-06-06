@@ -12,8 +12,15 @@
     (back-to-indentation)
     (when (= pos (point)) (beginning-of-line))))
 
+(defun --config/load-all (path)
+  "Loads all Emacs Lisp files in PATH relative to config-dir"
+  (let ((dir (concat config-dir path)))
+    (mapc (lambda (f) (load-file (concat (file-name-as-directory dir) f)))
+	  (directory-files dir nil "\\.el$"))))
+
 (defun --config/run-after-startup ()
   "Function to be used with emacs-startup-hook"
+  (--config/load-all "auto")
   (when (file-exists-p custom-file) (load custom-file))
   (cd "~")
   (message "Hack the planet!"))
