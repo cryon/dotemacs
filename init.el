@@ -1,9 +1,10 @@
 ;; ---------------------------------------------------------------------------
-;; -- Simplified emacs configuration
+;; -- Cryon's Emacs configuration
 ;; ---------------------------------------------------------------------------
 
 (defvar config-dir (file-name-directory load-file-name))
-(defvar hostname (downcase (car (split-string system-name "\\."))))
+(defvar hostname   (downcase (car (split-string system-name "\\."))))
+(defvar font       (if (eq system-type 'darwin) "Hasklig-18" "Hasklig-13"))
 
 (defun beginning-of-line-or-indentation ()
   "Move point to beginning of line or indentation if already there"
@@ -55,18 +56,21 @@
 
 	;; backups, lockfiles and autosaves
 	create-lockfiles nil
-	auto-save-file-name-transforms `((".*" ,(concat config-dir "autosaves/") t))
-	backup-directory-alist `(("." . ,(concat config-dir "backups")))
 	backup-by-copying t
 	version-control t
 	delete-old-versions t
 	kept-new-versions 6
-	kept-old-versions 2)
+	kept-old-versions 2
+
+	auto-save-file-name-transforms
+	`((".*" ,(concat config-dir "autosaves/") t))
+	backup-directory-alist
+	`(("." . ,(concat config-dir "backups"))))
 
   :config
   (scroll-bar-mode -1)
   (tool-bar-mode -1)
-  (set-frame-font (if (eq system-type 'darwin) "Hasklig-18" "Hasklig-13") nil t)
+  (set-frame-font font nil t)
   (show-paren-mode t)
   (winner-mode 1)
   (delete-selection-mode 1)
@@ -85,7 +89,7 @@
 
   :hook
   ((emacs-startup . --config/run-after-startup)
-   (before-save . delete-trailing-whitespace)))
+   (before-save   . delete-trailing-whitespace)))
 
 (use-package package
   :config
@@ -115,11 +119,11 @@
 (use-package project
   :init
   (setq project-switch-commands
-	'((project-find-file "Find file" "f")
-          (project-dired "Dired" "d")
-          (project-eshell "Eshell" "e")
-          (consult-ripgrep "ripgrep" "g")
-          (magit-project-status "Magit" "m"))))
+	'((project-find-file    "Find file" "f")
+          (project-dired        "Dired"     "d")
+          (project-eshell       "Eshell"    "e")
+          (consult-ripgrep      "Ripgrep"   "g")
+          (magit-project-status "Magit"     "m"))))
 
 ;; -- Vertico, Consult, Marginalia, Orderless --------------------------------
 
@@ -136,9 +140,9 @@
 (use-package orderless :ensure t
   :hook vertico-mode
   :custom
-  (completion-styles '(orderless basic))
+  (completion-styles             '(orderless basic))
   (completion-category-overrides '((file (styles basic partial-completion))))
-  (orderless-matching-styles '(orderless-literal orderless-flex)))
+  (orderless-matching-styles     '(orderless-literal orderless-flex)))
 
 (use-package marginalia :ensure t
   :hook vertico-mode
@@ -151,8 +155,8 @@
   :bind
   (:map vertico-map
 	("M-DEL" . vertico-directory-delete-word)
-	("DEL" . vertico-directory-delete-char)
-	("RET" . vertico-directory-enter))
+	("DEL"   . vertico-directory-delete-char)
+	("RET"   . vertico-directory-enter))
   :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
 
 ;; -- Org and Org Roam -------------------------------------------------------
@@ -177,7 +181,8 @@
   (org-roam-complete-everywhere t)
   (org-roam-capture-templates
    '(("d" "default" plain "%?"
-      :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n"))))
+      :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
+			 "#+title: ${title}\n"))))
 
   :bind
   (("C-c n l" . org-roam-buffer-toggle)
@@ -214,8 +219,8 @@
   :custom
   (magit-diff-refine-hunk t)
   (magit-popup-use-prefix-argument 'default)
-  (magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1)
-  (magit-bury-buffer-function 'magit-restore-window-configuration))
+  (magit-display-buffer-function   'magit-display-buffer-fullframe-status-v1)
+  (magit-bury-buffer-function      'magit-restore-window-configuration))
 
 (use-package mood-line :ensure t
   :config (mood-line-mode))
@@ -242,10 +247,10 @@
   :config
   (ligature-set-ligatures
    'prog-mode ;; Tuned for hasklig
-   '("&&" "***" "*>" "\\\\" "||" "|>" "::"
-     "==" "===" "==>" "=>" "=<<" "!!" ">>"
-     ">>=" ">>>" ">>-" ">-" "->" "-<" "-<<"
-     "<*" "<*>" "<|" "<|>" "<$>" "<>" "<-"
-     "<<" "<<<" "<+>" ".." "..." "++" "+++"
-     "/=" ":::" ">=>" "->>" "<=>" "<=<" "<->"))
+   '("&&"  "***" "*>"  "\\\\" "||"  "|>"  "::"
+     "=="  "===" "==>" "=>"   "=<<" "!!"  ">>"
+     ">>=" ">>>" ">>-" ">-"   "->"  "-<"  "-<<"
+     "<*"  "<*>" "<|"  "<|>"  "<$>" "<>"  "<-"
+     "<<"  "<<<" "<+>" ".."   "..." "++"  "+++"
+     "/="  ":::" ">=>" "->>"  "<=>" "<=<" "<->"))
   (global-ligature-mode t))
